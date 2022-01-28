@@ -10,9 +10,17 @@ public class BreakableTransform : Breakable
         GetComponent<Collider2D>().isTrigger = true;
     }
 
-    public override void HandleFix()
+    public override bool HandleFix()
     {
-        transform.rotation = Quaternion.Euler(Vector3.zero);
+        Debug.Log("Check for Fixing predicate..");
+        if (FixableObject.IsFixing())
+        {
+            Debug.Log("Fixed object!");
+            transform.rotation = Quaternion.Euler(Vector3.zero);
+            return true;
+        }
+
+        return false;
     }
 
     // Start is called before the first frame update

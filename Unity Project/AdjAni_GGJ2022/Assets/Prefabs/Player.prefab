@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <MovementSpeed>k__BackingField: 10
+  interactingObjects: []
 --- !u!50 &1614376086342105047
 Rigidbody2D:
   serializedVersion: 4
