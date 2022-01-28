@@ -21,12 +21,18 @@ public class DogController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("Collision!");
         Breakable breakable = collision.gameObject.GetComponent<Breakable>();
-        Debug.Log(breakable);
         if (breakable != null)
         {
             breakable.Break();
+            return;
+        }
+
+        ChaseObject chaseObject = collision.gameObject.GetComponent<ChaseObject>();
+        if (chaseObject != null)
+        {
+            chaseObject.Kill();
+            return;
         }
     }
 
