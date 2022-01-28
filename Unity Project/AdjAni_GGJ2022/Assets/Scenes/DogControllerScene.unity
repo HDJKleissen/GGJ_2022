@@ -967,17 +967,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10473e1f43ca2944c8027c5287145099, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveSpeed: 8
-  DogSprite: {fileID: 2088713510}
-  LerpSpeed: 2
-  SlowdownLerpSpeed: 3
-  AccelerateLerpSpeed: 3
-  AccelerateGatePercentage: 0.2
-  MaxVelocity: 15
-  StateText: {fileID: 497784668}
-  SpeedText: {fileID: 975716170}
-  DesiredSpeedText: {fileID: 388852800}
-  velocity: {x: 0, y: 0}
+  MoveSpeed: 12864.875
+  DogSprite: {fileID: 0}
+  LerpSpeed: 7.62e-43
+  SlowdownLerpSpeed: 1.99558e+35
+  AccelerateLerpSpeed: 7.62e-43
+  AccelerateGatePercentage: 1.9955736e+35
+  MaxVelocity: 7.62e-43
+  StateText: {fileID: 0}
+  SpeedText: {fileID: 0}
+  DesiredSpeedText: {fileID: 0}
+  velocity: {x: 12864.8125, y: 7.62e-43}
 --- !u!50 &763963969
 Rigidbody2D:
   serializedVersion: 4
