@@ -5,11 +5,12 @@ using TMPro;
 
 public class Fixable : MonoBehaviour
 {
-    [SerializeField] private TextMeshPro fixTmp;
+    private TextMeshPro fixTmp;
     [SerializeField] private KeyCode input;
     [SerializeField] private int requiredInteractions = 5;
     [SerializeField] private int currentInteractions = 0;
 
+    
     // Start is called before the first frame update
     void Start()
     {
