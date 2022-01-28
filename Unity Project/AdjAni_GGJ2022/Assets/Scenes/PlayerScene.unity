@@ -868,7 +868,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4326cfbe75992ea4dad0dc0c4e0dd2e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fixTmp: {fileID: 1763432339}
   input: 32
   requiredInteractions: 5
   currentInteractions: 0
