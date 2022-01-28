@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PauseMenuScene.unity
     guid: d06b5925fc7e39c42adcf21af531888b
+  - enabled: 1
+    path: Assets/Scenes/ChaseableScene.unity
+    guid: fc1b99bc4bdb7fa4d9a55feb3e97a1fe
   m_configObjects: {}
