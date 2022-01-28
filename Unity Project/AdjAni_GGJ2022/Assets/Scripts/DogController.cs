@@ -13,11 +13,21 @@ public class DogController : MonoBehaviour
     public TextMeshProUGUI StateText, SpeedText, DesiredSpeedText;
 
     public Vector2 velocity = Vector2.zero;
-    Rigidbody2D rbody2D;
+
     // Start is called before the first frame update
     void Start()
     {
-        rbody2D = GetComponent<Rigidbody2D>();
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log("Collision!");
+        Breakable breakable = collision.gameObject.GetComponent<Breakable>();
+        Debug.Log(breakable);
+        if (breakable != null)
+        {
+            breakable.Break();
+        }
     }
 
     // Update is called once per frame
@@ -28,27 +38,23 @@ public class DogController : MonoBehaviour
         Vector2 desiredVelocity = new Vector2(horizontalInput, verticalInput).normalized * MaxVelocity * Time.fixedDeltaTime;
 
         float lerpSpeed = LerpSpeed;
-        Debug.Log("velmag: " + velocity.magnitude);
-        Debug.Log("velmag with gate: " + velocity.magnitude * AccelerateGatePercentage);
-        Debug.Log("desired: " + desiredVelocity.magnitude);
+
         DesiredSpeedText.SetText("Desired: " + desiredVelocity + ", speed: " + desiredVelocity.magnitude);
         SpeedText.SetText("Velocity: " + velocity + ", speed: " + velocity.magnitude);
+
         if (desiredVelocity == Vector2.zero)
         {
-            Debug.Log("slowing");
             StateText.SetText("Slowing");
             lerpSpeed *= SlowdownLerpSpeed;
         }
         else if(desiredVelocity.magnitude * AccelerateGatePercentage >= velocity.magnitude )
         {
             StateText.SetText("Accelerating");
-            Debug.Log("accelerating");
             lerpSpeed *= AccelerateLerpSpeed;
         }
         else
         {
             StateText.SetText("Max speed?");
-            Debug.Log("nuffin");
         }
         velocity = Vector2.Lerp(velocity, desiredVelocity, Time.fixedDeltaTime * lerpSpeed);
 
