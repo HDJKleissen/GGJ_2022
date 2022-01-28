@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class UIController : MonoBehaviour
 {
     public GameObject PauseMenu;
-    bool paused;
+    public TextMeshProUGUI catchableUIText, timerText;
 
     // Start is called before the first frame update
     void Start()
@@ -39,5 +40,15 @@ public class UIController : MonoBehaviour
         {
             Time.timeScale = 1;
         }
+    }
+
+    public void UpdateTimer(float time)
+    {
+        timerText.SetText($"Timer: {time}");
+    }
+
+    public void UpdateCaughtChaseObjects(int caughtAmount, int total)
+    {
+        catchableUIText.SetText($"Chickens: {caughtAmount}/{total}");
     }
 }
