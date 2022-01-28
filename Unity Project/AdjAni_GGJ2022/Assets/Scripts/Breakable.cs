@@ -8,8 +8,12 @@ using UnityEngine;
 
 public abstract class Breakable : MonoBehaviour
 {
-    bool itemBroken = false;
-    bool itemFixed = false;
+    [SerializeField] protected bool itemBroken = false;
+    [SerializeField] protected bool itemFixed = false;
+    [field: SerializeField] public Fixable FixableObject { get; private set;}
+
+    public bool ItemBroken { get => itemBroken; }
+    public bool ItemFixed { get => itemFixed; }
 
     public void Break()
     {
@@ -23,11 +27,14 @@ public abstract class Breakable : MonoBehaviour
     {
         if(itemBroken && !itemFixed)
         {
-            HandleFix();
-            itemFixed = true;
+            if (HandleFix())
+            {
+                itemBroken = false;
+                itemFixed = true;
+            }
         }
     }
 
     public abstract void HandleBreak();
-    public abstract void HandleFix();
+    public abstract bool HandleFix();
 }
