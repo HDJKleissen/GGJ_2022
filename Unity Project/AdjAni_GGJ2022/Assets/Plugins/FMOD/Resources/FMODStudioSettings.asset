@@ -249,6 +249,7 @@ MonoBehaviour:
   - Master
   Banks:
   - Music_Bank
+  - SFX_Bank
   BanksToLoad: []
   LiveUpdatePort: 9264
   EnableMemoryTracking: 0
@@ -261,7 +262,7 @@ MonoBehaviour:
   SharedLibraryTimeSinceStart: 0
   CurrentVersion: 131588
   HideSetupWizard: 1
-  LastEventReferenceScanVersion: 131588
+  LastEventReferenceScanVersion: 0
   Platforms:
   - {fileID: -4375631088036989451}
   - {fileID: -3638348840178225424}
