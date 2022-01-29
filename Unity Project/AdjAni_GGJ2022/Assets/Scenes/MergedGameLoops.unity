@@ -1218,7 +1218,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.0884808, y: 1}
+    m_SensorSize: {x: 2.6206896, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -5449,6 +5449,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1168498378 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7145259378892137815, guid: 611388d625cb9784e87d2c9dbb6d64f5, type: 3}
+  m_PrefabInstance: {fileID: 7145259378775651263}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1168498380
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1168498378}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 757b117caef61a24e82d116f332ffacc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1196288189
 GameObject:
   m_ObjectHideFlags: 0
@@ -7209,6 +7234,34 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1231982895, guid: 611388d625cb9784e87d2c9dbb6d64f5, type: 3}
       propertyPath: DontShade
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7145259378892137812, guid: 611388d625cb9784e87d2c9dbb6d64f5, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1303222970, guid: 7e742f43a309c6649be96715ccc73ede, type: 3}
+    - target: {fileID: 7145259378892137812, guid: 611388d625cb9784e87d2c9dbb6d64f5, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7145259378892137812, guid: 611388d625cb9784e87d2c9dbb6d64f5, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7145259378892137812, guid: 611388d625cb9784e87d2c9dbb6d64f5, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7145259378892137814, guid: 611388d625cb9784e87d2c9dbb6d64f5, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7145259378892137814, guid: 611388d625cb9784e87d2c9dbb6d64f5, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7145259378892137814, guid: 611388d625cb9784e87d2c9dbb6d64f5, type: 3}
+      propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7145259379405052809, guid: 611388d625cb9784e87d2c9dbb6d64f5, type: 3}
