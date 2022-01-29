@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1614376086342105001
 Transform:
   m_ObjectHideFlags: 0
@@ -50,6 +50,11 @@ MonoBehaviour:
   OwnerAnimator: {fileID: 5071221437885985787}
   <MovementSpeed>k__BackingField: 10
   interactingObjects: []
+  ChickenKickenRadius: 0
+  feetCollider: {fileID: 1336191434}
+  ChickenLayer:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!50 &1614376086342105047
 Rigidbody2D:
   serializedVersion: 4

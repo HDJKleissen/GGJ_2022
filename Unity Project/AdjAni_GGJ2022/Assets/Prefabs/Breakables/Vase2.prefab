@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2122051085270216513}
   - component: {fileID: 2122051085270216526}
   - component: {fileID: 2122051085270216512}
+  - component: {fileID: 4233202656879538346}
   m_Layer: 0
   m_Name: Broken
   m_TagString: Untagged
@@ -101,6 +102,22 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.56}
   serializedVersion: 2
   m_Radius: 0.53
+--- !u!58 &4233202656879538346
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2122051085270216524}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.5}
+  serializedVersion: 2
+  m_Radius: 1.5
 --- !u!1 &2122051085318004421
 GameObject:
   m_ObjectHideFlags: 0
@@ -455,6 +472,10 @@ PrefabInstance:
     - target: {fileID: 4500292084909629434, guid: cd0e9469dbb33824d8cf4f2a05d4d262, type: 3}
       propertyPath: m_Name
       value: PS_CleanUp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4500292084909629434, guid: cd0e9469dbb33824d8cf4f2a05d4d262, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4500292084909629439, guid: cd0e9469dbb33824d8cf4f2a05d4d262, type: 3}
       propertyPath: m_RootOrder
