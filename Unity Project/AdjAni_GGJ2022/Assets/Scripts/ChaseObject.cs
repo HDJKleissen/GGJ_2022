@@ -11,10 +11,12 @@ public class ChaseObject : MonoBehaviour
     public AIDestinationSetter AIDestinationSetter;
     public AIPath AIPath;
     public Transform Dog;
-
+    public ChickenAnimator chickenAnimator;
+    public Rigidbody2D rigbod2D;
     public Transform LeftWall, RightWall, TopWall, BottomWall;
     public float TimeUntilNewPosition;
     Transform AIDestination;
+    Vector3 previousPosition;
 
     float findPositionTimer = 0;
 
@@ -35,6 +37,7 @@ public class ChaseObject : MonoBehaviour
     {
         if (alive)
         {
+            
             if (findPositionTimer < TimeUntilNewPosition && !AIPath.reachedEndOfPath)
             {
                 findPositionTimer += Time.deltaTime;
@@ -45,6 +48,8 @@ public class ChaseObject : MonoBehaviour
                 AIDestination.position = FindNewRandomPosition();
             }
         }
+        chickenAnimator.AnimateChicken(AIPath.velocity.x > 0, AIPath.velocity.magnitude > 2f);
+        previousPosition = transform.position;
     }
 
     void UpdateAliveness(bool isAlive)
