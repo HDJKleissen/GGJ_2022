@@ -206,8 +206,8 @@ TextureImporter:
       name: breakables1_3
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 1500
+        y: 500
         width: 500
         height: 500
       alignment: 0
@@ -227,7 +227,7 @@ TextureImporter:
       name: breakables1_4
       rect:
         serializedVersion: 2
-        x: 500
+        x: 0
         y: 0
         width: 500
         height: 500
@@ -248,7 +248,7 @@ TextureImporter:
       name: breakables1_5
       rect:
         serializedVersion: 2
-        x: 1000
+        x: 500
         y: 0
         width: 500
         height: 500
@@ -269,7 +269,7 @@ TextureImporter:
       name: breakables1_6
       rect:
         serializedVersion: 2
-        x: 1500
+        x: 1000
         y: 0
         width: 500
         height: 500
@@ -282,6 +282,27 @@ TextureImporter:
       bones: []
       spriteID: 37546bd5f96a1754aaf65a97416b4956
       internalID: 1292232590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: breakables1_7
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 0
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82276d92c6985d348af820f42ac99853
+      internalID: -935591378
       vertices: []
       indices: 
       edges: []
@@ -299,6 +320,7 @@ TextureImporter:
     nameFileIdTable:
       breakables1_1: 1518541885
       breakables1_2: -133847298
+      breakables1_7: -935591378
       breakables1_4: 414108076
       breakables1_6: 1292232590
       breakables1_0: 887480418
