@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{c2b2feae-d8ed-43ca-b51e-9dd4598c69a6}">
 		<property name="assetPath">
-			<value>GGJ_2022 Dog Music Loop Slow.wav</value>
+			<value>Music/GGJ_2022 Dog Music Loop Slow.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>

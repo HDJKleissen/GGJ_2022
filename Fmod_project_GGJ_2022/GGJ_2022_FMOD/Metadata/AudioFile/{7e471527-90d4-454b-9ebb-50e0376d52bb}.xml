@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{7e471527-90d4-454b-9ebb-50e0376d52bb}">
 		<property name="assetPath">
-			<value>GGJ_2022 Owner Music Fast 350bpm.wav</value>
+			<value>Music/GGJ_2022 Owner Music Fast 350bpm.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>
