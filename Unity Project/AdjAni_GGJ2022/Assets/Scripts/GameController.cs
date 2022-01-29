@@ -30,12 +30,15 @@ public class GameController : UnitySingleton<GameController>
     // Start is called before the first frame update
     void Start()    
     {
-        GreyScaleScene.Shade();
+        //GreyScaleScene.Shade();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(!GreyScaleScene.IsGreyScaled)
+            GreyScaleScene.Shade();
+
         if (PlayerHasControl)
         {
             if (GameState == GameState.Dog)

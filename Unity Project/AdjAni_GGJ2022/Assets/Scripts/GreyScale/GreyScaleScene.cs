@@ -6,7 +6,7 @@ using System;
 
 public class GreyScaleScene : MonoBehaviour
 {
-    bool dogScene = true;
+    public bool IsGreyScaled { get; set; } = false;
     [SerializeField] private List<Renderer> objects;
     // Start is called before the first frame update
     void Start()
@@ -20,6 +20,7 @@ public class GreyScaleScene : MonoBehaviour
         if (GameController.Instance.GameState == GameState.Dog)
         {
             SetGreyScale(objects, true);
+            IsGreyScaled = true;
         }
         else
         {
