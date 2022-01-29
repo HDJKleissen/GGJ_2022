@@ -94,6 +94,11 @@ public class DogController : MonoBehaviour
             PounceCharges--;
             StartCoroutine(PounceAttack());
         }
+
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            FMODUnity.RuntimeManager.PlayOneShotAttached("event:/Bark", gameObject);
+        }
         UpdateChargeCircles();
     }
 
