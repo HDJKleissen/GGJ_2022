@@ -7,7 +7,7 @@ using TMPro;
 
 public class UIController : MonoBehaviour
 {
-    public GameObject PauseMenu, GameOverMenuTemp;
+    public GameObject PauseMenu, GameOverMenuTemp, scoreScreenManager;
     public TextMeshProUGUI catchableUIText, timerText, scoreSummaryText;
 
     // Start is called before the first frame update
@@ -64,6 +64,11 @@ public class UIController : MonoBehaviour
             $"You broke <color=orange>{ scoreObject.BreakablesBroken }</color> objects, but could have broken <color=red>{ scoreObject.TotalBreakables }</color>. " +
             $"You fixed <color=green>{ scoreObject.BreakablesFixed }</color> of those with <color=green>{ FormatTime(scoreObject.OwnerTime) }</color> left. " +
             $"Well done!(or maybe not, i'm not smart enough to figure that out Sadge)");
+    }
+
+    public void OpenHighScoreScene(ScoreObject scoreObject)
+    {
+        scoreScreenManager.GetComponent<ScoreScreenManager>().GoHighScoreScene();
     }
 
     string FormatTime(float time)

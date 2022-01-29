@@ -25,7 +25,8 @@ public class GameController : UnitySingleton<GameController>
     List<Breakable> brokenBreakables = new List<Breakable>();
     List<Breakable> fixedBreakables = new List<Breakable>();
 
-    ScoreObject scoreObject = new ScoreObject();
+    bool gameIsRunning;
+    public ScoreObject scoreObject = new ScoreObject();
 
     public GameState GameState { get; private set; } = GameState.Dog;
     public bool PlayerHasControl = true;
@@ -164,9 +165,10 @@ public class GameController : UnitySingleton<GameController>
     {
         PlayerHasControl = false;
         scoreObject.TotalBreakables = breakables.Count;
-        scoreObject.OwnerTime = timer;
+        scoreObject.OwnerTime = GameController.Instance.OwnerTimeAmount - timer;
         scoreObject.BreakablesFixed = fixedBreakables.Count;
-        UIController.OpenEndScreen(scoreObject);
+        //UIController.OpenEndScreen(scoreObject);
+        UIController.OpenHighScoreScene(scoreObject);
     }
 }
 

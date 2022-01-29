@@ -24,6 +24,7 @@ public abstract class Breakable : MonoBehaviour
     {
         if (!itemBroken && !itemFixed && GameController.Instance.GameState == GameState.Dog)
         {
+            GameController.Instance.CamShakeEffect.Shake();
             HandleBreak();
             FMODUnity.RuntimeManager.PlayOneShotAttached("event:/Pot_Break", gameObject);
             itemBroken = true;
@@ -37,6 +38,7 @@ public abstract class Breakable : MonoBehaviour
         {
             if (HandleFix())
             {
+                GameController.Instance.CamShakeEffect.Shake();
                 itemFixed = true;
                 GameController.Instance.FixBreakable(this);
             }
