@@ -17,6 +17,7 @@ public class ChaseObject : MonoBehaviour
     public float TimeUntilNewPosition;
     Transform AIDestination;
     Vector3 previousPosition;
+    FMOD.Studio.EventInstance ChickenSounds;
 
     float findPositionTimer = 0;
 
@@ -24,6 +25,10 @@ public class ChaseObject : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        ChickenSounds = FMODUnity.RuntimeManager.CreateInstance("event:/Chicken_Pok");
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(ChickenSounds, transform);
+        ChickenSounds.start();
+        ChickenSounds.release();
         UpdateAliveness(true);
         GameController.Instance.RegisterChaseObject(this);
         AIDestination = new GameObject().transform;
@@ -88,6 +93,7 @@ public class ChaseObject : MonoBehaviour
         //HandleKill();
         if (alive)
         {
+            ChickenSounds.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
             FMODUnity.RuntimeManager.PlayOneShotAttached("event:/Chicken_Die", gameObject);
             UpdateAliveness(false);
             // Inform gamecontroller we are dead
