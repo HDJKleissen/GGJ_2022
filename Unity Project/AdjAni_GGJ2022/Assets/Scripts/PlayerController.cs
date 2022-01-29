@@ -47,7 +47,6 @@ public class PlayerController : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Breakable breakable = collision.gameObject.GetComponent<Breakable>();
-        Debug.Log(breakable);
         if (breakable != null)
         {
             if (breakable.FixableObject != null && breakable.ItemBroken && !breakable.ItemFixed)
@@ -60,9 +59,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        Debug.Log("Collision!");
         Breakable breakable = collision.gameObject.GetComponent<Breakable>();
-        Debug.Log(breakable);
         if (breakable != null)
         {
             if(breakable.FixableObject != null)

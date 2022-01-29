@@ -137,6 +137,7 @@ public class GameController : UnitySingleton<GameController>
         {
             breakable.PrepForFixing();
         }
+
         GreyScaleScene.Shade();
     }
 
