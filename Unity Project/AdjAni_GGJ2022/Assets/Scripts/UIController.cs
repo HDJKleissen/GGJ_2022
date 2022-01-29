@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,21 +7,24 @@ using TMPro;
 
 public class UIController : MonoBehaviour
 {
-    public GameObject PauseMenu;
-    public TextMeshProUGUI catchableUIText, timerText;
+    public GameObject PauseMenu, GameOverMenuTemp;
+    public TextMeshProUGUI catchableUIText, timerText, scoreSummaryText;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Pause"))
+        if (GameController.Instance.PlayerHasControl)
         {
-            SetPause(true);
+            if (Input.GetButtonDown("Pause"))
+            {
+                SetPause(true);
+            }
         }
     }
 
@@ -44,11 +48,26 @@ public class UIController : MonoBehaviour
 
     public void UpdateTimer(float time)
     {
-        timerText.SetText($"Timer: {time}");
+        timerText.SetText($"Timer: {FormatTime(time)}");
     }
 
     public void UpdateCaughtChaseObjects(int caughtAmount, int total)
     {
         catchableUIText.SetText($"Chickens: {caughtAmount}/{total}");
+    }
+
+    public void OpenEndScreen(ScoreObject scoreObject)
+    {
+        GameOverMenuTemp.SetActive(true);
+        scoreSummaryText.SetText(
+            $"You got all squirrels in <color=green>{ FormatTime(scoreObject.DogTime) }</color>. " +
+            $"You broke <color=orange>{ scoreObject.BreakablesBroken }</color> objects, but could have broken <color=red>{ scoreObject.TotalBreakables }</color>. " +
+            $"You fixed <color=green>{ scoreObject.BreakablesFixed }</color> of those with <color=green>{ FormatTime(scoreObject.OwnerTime) }</color> left. " +
+            $"Well done!(or maybe not, i'm not smart enough to figure that out Sadge)");
+    }
+
+    string FormatTime(float time)
+    {
+        return TimeSpan.FromSeconds(time).ToString("mm\\:ss\\.ff");
     }
 }

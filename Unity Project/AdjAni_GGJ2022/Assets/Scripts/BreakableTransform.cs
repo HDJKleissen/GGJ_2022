@@ -7,7 +7,7 @@ public class BreakableTransform : Breakable
     public override void HandleBreak()
     {
         transform.rotation = Quaternion.Euler(new Vector3(0, 0, Random.Range(0f, 360f)));
-        GetComponent<Collider2D>().isTrigger = true;
+        GetComponent<Collider2D>().enabled = false;
     }
 
     public override bool HandleFix()
@@ -23,15 +23,8 @@ public class BreakableTransform : Breakable
         return false;
     }
 
-    // Start is called before the first frame update
-    void Start()
+    public override void HandlePrepForFixing()
     {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        GetComponent<Collider2D>().enabled = true;
     }
 }

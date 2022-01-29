@@ -39,33 +39,36 @@ public class DogController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        float horizontalInput = Input.GetAxisRaw("Horizontal");
-        float verticalInput = Input.GetAxisRaw("Vertical");
-        Vector2 desiredVelocity = new Vector2(horizontalInput, verticalInput).normalized * MaxVelocity * Time.fixedDeltaTime;
-
-        float lerpSpeed = LerpSpeed;
-
-        DesiredSpeedText.SetText("Desired: " + desiredVelocity + ", speed: " + desiredVelocity.magnitude);
-        SpeedText.SetText("Velocity: " + velocity + ", speed: " + velocity.magnitude);
-
-        if (desiredVelocity == Vector2.zero)
+        if (GameController.Instance.PlayerHasControl)
         {
-            StateText.SetText("Slowing");
-            lerpSpeed *= SlowdownLerpSpeed;
-        }
-        else if(desiredVelocity.magnitude * AccelerateGatePercentage >= velocity.magnitude )
-        {
-            StateText.SetText("Accelerating");
-            lerpSpeed *= AccelerateLerpSpeed;
-        }
-        else
-        {
-            StateText.SetText("Max speed?");
-        }
-        velocity = Vector2.Lerp(velocity, desiredVelocity, Time.fixedDeltaTime * lerpSpeed);
+            float horizontalInput = Input.GetAxisRaw("Horizontal");
+            float verticalInput = Input.GetAxisRaw("Vertical");
+            Vector2 desiredVelocity = new Vector2(horizontalInput, verticalInput).normalized * MaxVelocity * Time.fixedDeltaTime;
 
-        RotateDogSprite(horizontalInput, verticalInput);
-        transform.position += new Vector3(velocity.x, velocity.y, 0);
+            float lerpSpeed = LerpSpeed;
+
+            DesiredSpeedText.SetText("Desired: " + desiredVelocity + ", speed: " + desiredVelocity.magnitude);
+            SpeedText.SetText("Velocity: " + velocity + ", speed: " + velocity.magnitude);
+
+            if (desiredVelocity == Vector2.zero)
+            {
+                StateText.SetText("Slowing");
+                lerpSpeed *= SlowdownLerpSpeed;
+            }
+            else if (desiredVelocity.magnitude * AccelerateGatePercentage >= velocity.magnitude)
+            {
+                StateText.SetText("Accelerating");
+                lerpSpeed *= AccelerateLerpSpeed;
+            }
+            else
+            {
+                StateText.SetText("Max speed?");
+            }
+            velocity = Vector2.Lerp(velocity, desiredVelocity, Time.fixedDeltaTime * lerpSpeed);
+
+            RotateDogSprite(horizontalInput, verticalInput);
+            transform.position += new Vector3(velocity.x, velocity.y, 0);
+        }
     }
 
     private void RotateDogSprite(float horizontalInput, float verticalInput)

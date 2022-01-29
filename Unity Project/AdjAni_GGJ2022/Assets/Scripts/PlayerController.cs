@@ -21,20 +21,23 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        // Gives a value between -1 and 1
-        horizontalInput = Input.GetAxisRaw("Horizontal"); // -1 is left
-        verticalInput = Input.GetAxisRaw("Vertical"); // -1 is down
+        if (GameController.Instance.PlayerHasControl)
+        {
+            // Gives a value between -1 and 1
+            horizontalInput = Input.GetAxisRaw("Horizontal"); // -1 is left
+            verticalInput = Input.GetAxisRaw("Vertical"); // -1 is down
 
-        Rotate();
+            Rotate();
 
-        UpdateObjectInteraction();
+            UpdateObjectInteraction();
+        }
     }
 
     void UpdateObjectInteraction()
     {
         foreach(Breakable b in interactingObjects)
         {
-            if (!b.ItemBroken)
+            if (!b.ItemBroken || b.ItemFixed)
                 return;
 
             b.Fix();
@@ -48,9 +51,11 @@ public class PlayerController : MonoBehaviour
         Debug.Log(breakable);
         if (breakable != null)
         {
-            if (breakable.FixableObject != null)
+            if (breakable.FixableObject != null && breakable.ItemBroken && !breakable.ItemFixed)
+              {
                 breakable.FixableObject.gameObject.SetActive(true);
-            interactingObjects.Add(breakable);
+                interactingObjects.Add(breakable);
+            }
         }
     }
 
@@ -93,6 +98,9 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        Move();
+        if (GameController.Instance.PlayerHasControl)
+        {
+            Move();
+        }
     }
 }
