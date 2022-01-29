@@ -70,6 +70,4 @@ public class ChaseObject : MonoBehaviour
     {
         return new Vector3(Random.Range(LeftWall.position.x, RightWall.position.x), Random.Range(BottomWall.position.y, TopWall.position.y), 0);
     }
-
-    //public abstract void HandleKill();
 }
