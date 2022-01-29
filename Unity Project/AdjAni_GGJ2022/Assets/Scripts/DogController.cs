@@ -39,11 +39,20 @@ public class DogController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Breakable breakable = collision.gameObject.GetComponent<Breakable>();
+        Breakable breakable = collision.gameObject.GetComponentInParent<Breakable>();
         if (breakable != null)
         {
             breakable.Break();
             return;
+        }
+        else
+        {
+            breakable = collision.gameObject.GetComponent<Breakable>();
+            if (breakable != null)
+            {
+                breakable.Break();
+                return;
+            }
         }
     }
 
