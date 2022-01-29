@@ -7,6 +7,7 @@ using System;
 public class GameController : UnitySingleton<GameController>
 {
     public UIController UIController;
+    public MusicPlayer MusicPlayer;
     public DogController Dog;
     public PlayerController Owner;
     public CinemachineVirtualCamera VirtualCamera;
@@ -31,6 +32,7 @@ public class GameController : UnitySingleton<GameController>
     // Start is called before the first frame update
     void Start()    
     {
+        MusicPlayer.SetSpeedUp(true);
         //GreyScaleScene.Shade();
     }
 
@@ -123,6 +125,7 @@ public class GameController : UnitySingleton<GameController>
             scoreObject.BreakablesBroken = brokenBreakables.Count;
 
             GameStateSwitchOverlay.StartFade();
+            MusicPlayer.SetOwner(true);
         }
     }
 

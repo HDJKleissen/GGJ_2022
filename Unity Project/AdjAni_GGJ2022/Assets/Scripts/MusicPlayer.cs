@@ -6,9 +6,6 @@ public class MusicPlayer : MonoBehaviour
 {
 
     FMOD.Studio.EventInstance Music;
-    public bool fast;
-    public bool owner;
-
     // Start is called before the first frame update
 
     void Start()
@@ -20,33 +17,16 @@ public class MusicPlayer : MonoBehaviour
 
     private void Update()
     {
-        SetSpeedUp();
-        SetOwner();
     }
 
-    void SetSpeedUp()
+    public void SetSpeedUp(bool value)
     {
-        if (fast == true)
-        {
-            Music.setParameterByName("SpeedUp", 1f, false);
-        }
-        else
-        {
-            Music.setParameterByName("SpeedUp", 0f, false);
-        }
+        Music.setParameterByName("SpeedUp", value ? 1f : 0f, false);
     }
 
-    void SetOwner()
+    public void SetOwner(bool value)
     {
-        if (owner == true)
-        {
-            Music.setParameterByName("Owner", 1f, false);
-        }
-        else
-        {
-            Music.setParameterByName("Owner", 0f, false);
-        }
-
+        Music.setParameterByName("Owner", value ? 1f : 0f, false);
     }
 
     private void OnDestroy()

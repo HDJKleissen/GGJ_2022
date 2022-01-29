@@ -12,6 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/OptionsMenu.unity
     guid: 50c2ee4ac74995e48855492e76b57ddb
   - enabled: 1
-    path: Assets/Scenes/LetThereBeLight.unity
-    guid: 8cfd5924c8d941048ab30bd0de5e45b0
+    path: Assets/Scenes/MergedGameLoops.unity
+    guid: becd28c3d1255ff4ab1cf9531542a97b
   m_configObjects: {}

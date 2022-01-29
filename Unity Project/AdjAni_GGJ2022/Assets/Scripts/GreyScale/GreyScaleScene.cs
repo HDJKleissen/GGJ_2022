@@ -34,7 +34,9 @@ public class GreyScaleScene : MonoBehaviour
 
         foreach (Renderer SR in Resources.FindObjectsOfTypeAll(typeof(Renderer)) as Renderer[])
         {
+#if UNITY_EDITOR
             if (!EditorUtility.IsPersistent(SR.gameObject.transform.root.gameObject) && !(SR.gameObject.hideFlags == HideFlags.NotEditable || SR.gameObject.hideFlags == HideFlags.HideAndDontSave))
+#endif
                 SRInScene.Add(SR);
         }
 
