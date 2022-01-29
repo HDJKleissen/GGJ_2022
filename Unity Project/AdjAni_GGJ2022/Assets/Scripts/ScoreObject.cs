@@ -11,5 +11,16 @@ public class ScoreObject
     public int TotalBreakables;
     public int BreakablesBroken;
     public int BreakablesFixed;
+
+    //calc score in some magical way
+    public int FinalScore {
+        get {
+            float score = GameController.Instance.OwnerTimeAmount;
+            score -= BreakablesBroken;
+            score -= OwnerTime;
+            score -= DogTime;
+            return (int)score;
+        }
+    }
 }
 
