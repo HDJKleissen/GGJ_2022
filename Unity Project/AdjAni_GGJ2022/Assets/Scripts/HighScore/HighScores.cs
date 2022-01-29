@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class HighScores : MonoBehaviour
 {
+    //webpage for admin shite
+    //http://dreamlo.com/lb/tL52gMuQN0yFvNePRKsB1wjSgZ9v-ec0OhTZaNXJFO1w
     const string privateCode = "tL52gMuQN0yFvNePRKsB1wjSgZ9v-ec0OhTZaNXJFO1w";  //Key to Upload New Info
     const string publicCode = "61f583e28f40bb1058b7f97d";   //Key to download
-    const string webURL = "http://dreamlo.com/lb/"; //  Website the keys are for
+    const string webURL = "https://www.dreamlo.com/lb/"; //  Website the keys are for
 
     public PlayerScore[] scoreList;
-    DisplayHighscores myDisplay;
+    public DisplayHighscores myDisplay;
 
     static HighScores instance; //Required for STATIC usability
     void Awake()

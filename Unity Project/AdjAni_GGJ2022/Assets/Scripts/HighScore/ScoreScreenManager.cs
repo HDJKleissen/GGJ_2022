@@ -10,7 +10,7 @@ public class ScoreScreenManager : MonoBehaviour
     [SerializeField] private GameObject highScoreScreen;
 
     [SerializeField] private TextMeshProUGUI nameTmpro;
-    private HighScores highScores;
+    HighScores highScores;
     // Start is called before the first frame update
     void Start()
     {
