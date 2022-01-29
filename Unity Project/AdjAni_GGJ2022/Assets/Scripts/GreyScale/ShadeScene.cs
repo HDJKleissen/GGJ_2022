@@ -12,13 +12,21 @@ public class ShadeScene : MonoBehaviour
     void Start()
     {
         objects = GetAllObjectsOnlyInScene();
-        SetGreyScale(objects, true);
+
+        if (GameController.Instance.GameState == GameState.Dog)
+        {
+            SetGreyScale(objects, true);
+        }
+        else
+        {
+            SetGreyScale(objects, false);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    //should be called late
+    void Shade()
     {
-        
+
     }
 
     List<SpriteRenderer> GetAllObjectsOnlyInScene()
@@ -36,13 +44,11 @@ public class ShadeScene : MonoBehaviour
 
     void SetGreyScale(List<SpriteRenderer> renderers, bool on)
     {
-        //recolor everything except for components that are inversely colored
+        //recolor everything except for components that have the inverse component
         foreach(SpriteRenderer r in renderers)
         {
-            if(!r.gameObject.TryGetComponent(out InverseGreyScale igs))
-            {
-                r.material.SetInt("_IsGreyScale", Convert.ToInt32(on));
-            }
+            bool inverse = r.gameObject.TryGetComponent(out InverseGreyScale igs);
+            r.material.SetInt("_IsGreyScale", Convert.ToInt32(on ^ inverse));
         }
     }
 }
