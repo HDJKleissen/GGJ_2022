@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Unity.Collections;
+using UnityEngine.UI;
 
 public class DogController : MonoBehaviour
 {
@@ -10,12 +12,29 @@ public class DogController : MonoBehaviour
     public Transform DogSprite;
     public float LerpSpeed, SlowdownLerpSpeed, AccelerateLerpSpeed, AccelerateGatePercentage;
     public float MaxVelocity;
+    public float PounceWindupTime, PounceJumpTime, PounceSpeed;
+    [ReadOnly]
+    public int MaxPounceCharges, PounceCharges;
+    public float pounceRechargeTimer;
+    public float PounceRechargeTime;
+    public Transform PounceCirclesParent;
+    public Image[] circles;
 
     public Vector2 velocity = Vector2.zero;
+    [ReadOnly]
+    public float speed, desiredSpeed;
+    Vector2 lastNonZeroInput;
+    Vector2 desiredVelocity;
+    bool pouncing = false;
+
+    public TextMeshPro statusText;
 
     // Start is called before the first frame update
     void Start()
     {
+        circles= PounceCirclesParent.GetComponentsInChildren<Image>();
+        MaxPounceCharges = circles.Length;
+        PounceCharges = MaxPounceCharges;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -26,8 +45,11 @@ public class DogController : MonoBehaviour
             breakable.Break();
             return;
         }
+    }
 
-        ChaseObject chaseObject = collision.gameObject.GetComponent<ChaseObject>();
+    private void OnTriggerEnter2D(Collider2D collider)
+    {
+        ChaseObject chaseObject = collider.gameObject.GetComponent<ChaseObject>();
         if (chaseObject != null)
         {
             chaseObject.Kill();
@@ -36,34 +58,125 @@ public class DogController : MonoBehaviour
     }
     private void Update()
     {
-        DogAnimator.AnimateDog(new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")) != Vector2.zero);    
+        float horizontalInput = Input.GetAxisRaw("Horizontal");
+        float verticalInput = Input.GetAxisRaw("Vertical");
+
+        if(horizontalInput != 0 || verticalInput != 0)
+        {
+            lastNonZeroInput = new Vector2(horizontalInput, verticalInput).normalized;
+        }
+        DogAnimator.AnimateDog(new Vector2(horizontalInput, verticalInput) != Vector2.zero || pouncing);
+
+        if(PounceCharges < MaxPounceCharges)
+        {
+            if(pounceRechargeTimer >= PounceRechargeTime)
+            {
+                pounceRechargeTimer = 0;
+                PounceCharges++;
+            }
+            else
+            {
+                pounceRechargeTimer += Time.deltaTime;
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space) && PounceCharges > 0)
+        { 
+            PounceCharges--;
+            StartCoroutine(PounceAttack());
+        }
+        UpdateChargeCircles();
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        speed = velocity.magnitude;
+        desiredSpeed = desiredVelocity.magnitude;
         if (GameController.Instance.PlayerHasControl)
         {
             float horizontalInput = Input.GetAxisRaw("Horizontal");
             float verticalInput = Input.GetAxisRaw("Vertical");
-            Vector2 desiredVelocity = new Vector2(horizontalInput, verticalInput).normalized * MaxVelocity * Time.fixedDeltaTime;
-
+            RotateDogSprite(horizontalInput, verticalInput);
+            if (!pouncing)
+            {
+                desiredVelocity = new Vector2(horizontalInput, verticalInput).normalized * MaxVelocity * Time.fixedDeltaTime;
+            }
             float lerpSpeed = LerpSpeed;
 
-            if (desiredVelocity == Vector2.zero)
+            if (desiredVelocity == Vector2.zero && !pouncing)
             {
+                statusText.SetText("no move");
+
                 lerpSpeed *= SlowdownLerpSpeed;
             }
-            else if (desiredVelocity.magnitude * AccelerateGatePercentage >= velocity.magnitude)
+            else if (velocity.magnitude > desiredVelocity.magnitude && !pouncing)
             {
+                statusText.SetText("too fast");
+                lerpSpeed *= SlowdownLerpSpeed * 4;
+            }
+            else if (desiredVelocity.magnitude * AccelerateGatePercentage > velocity.magnitude && !pouncing)
+            {
+                statusText.SetText("accell");
+
                 lerpSpeed *= AccelerateLerpSpeed;
             }
-           
-            velocity = Vector2.Lerp(velocity, desiredVelocity, Time.fixedDeltaTime * lerpSpeed);
+            else
+            {
+                if (!pouncing)
+                {
+                    statusText.SetText("schmoovin");
+                }
+            }
+            if (!pouncing)
+            {
+                velocity = Vector2.Lerp(velocity, desiredVelocity, Time.fixedDeltaTime * lerpSpeed);
+            }
 
-
-            RotateDogSprite(horizontalInput, verticalInput);
             transform.position += new Vector3(velocity.x, velocity.y, 0);
+        }
+    }
+
+    IEnumerator PounceAttack()
+    {
+        statusText.SetText("Starting pounce");
+        pouncing = true;
+
+        velocity = velocity.normalized * Time.fixedDeltaTime;
+        desiredVelocity = Vector2.zero;
+
+        yield return new WaitForSeconds(PounceWindupTime);
+
+        statusText.SetText("Pouncing");
+        Vector2 pounceDirection = lastNonZeroInput.normalized;
+        RotateDogSprite(pounceDirection.x, pounceDirection.y);
+        velocity = pounceDirection * PounceSpeed * Time.fixedDeltaTime;
+        desiredVelocity = pounceDirection * PounceSpeed * Time.fixedDeltaTime;
+
+        yield return new WaitForSeconds(PounceJumpTime);
+
+        velocity = pounceDirection * MaxVelocity* Time.fixedDeltaTime;
+        desiredVelocity = Vector2.zero;
+        statusText.SetText("Done pouncing");
+        pouncing = false;
+    }
+
+    void UpdateChargeCircles()
+    {
+        for (int i = 0; i < circles.Length; i++)
+        {
+            if (i < PounceCharges)
+            {
+                circles[i].fillAmount = 1;
+            }
+            else if (i == PounceCharges)
+            {
+                circles[i].fillAmount = pounceRechargeTimer / PounceRechargeTime;
+            }
+            else
+            {
+                circles[i].fillAmount = 0;
+            }
         }
     }
 
