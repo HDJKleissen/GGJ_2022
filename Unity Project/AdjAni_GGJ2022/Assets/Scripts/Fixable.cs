@@ -29,6 +29,9 @@ public class Fixable : MonoBehaviour
     {
         if (Input.GetKeyDown(input))
         {
+            //  ?????
+
+            GameController.Instance.Owner.OwnerAnimator.Sweep();
             GameController.Instance.CamShakeEffect.Shake();
 
             if(PS != null)
