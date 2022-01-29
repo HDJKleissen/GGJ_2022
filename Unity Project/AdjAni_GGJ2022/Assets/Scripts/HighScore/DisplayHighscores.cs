@@ -32,7 +32,7 @@ public class DisplayHighscores : MonoBehaviour
             }
         }
 
-        Debug.Log("Resizing Text Together..");
+        //Debug.Log("Resizing Text Together..");
         ResizeAllTextFonts();
     }
 
@@ -56,7 +56,7 @@ public class DisplayHighscores : MonoBehaviour
         if (TextObjects == null || TextObjects.Count == 0)
             return;
 
-        Debug.Log("Resizing Text Together.. in functions");
+        //Debug.Log("Resizing Text Together.. in functions");
         // Iterate over each of the text objects in the array to find a good test candidate
         // There are different ways to figure out the best candidate
         // Preferred width works fine for single line text objects
