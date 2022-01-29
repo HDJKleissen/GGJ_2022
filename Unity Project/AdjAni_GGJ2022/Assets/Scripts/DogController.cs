@@ -5,6 +5,7 @@ using TMPro;
 
 public class DogController : MonoBehaviour
 {
+    public DogAnimator DogAnimator;
     public float MoveSpeed;
     public Transform DogSprite;
     public float LerpSpeed, SlowdownLerpSpeed, AccelerateLerpSpeed, AccelerateGatePercentage;
@@ -34,6 +35,10 @@ public class DogController : MonoBehaviour
             chaseObject.Kill();
             return;
         }
+    }
+    private void Update()
+    {
+        DogAnimator.AnimateDog(new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")) != Vector2.zero);    
     }
 
     // Update is called once per frame
@@ -65,6 +70,7 @@ public class DogController : MonoBehaviour
                 StateText.SetText("Max speed?");
             }
             velocity = Vector2.Lerp(velocity, desiredVelocity, Time.fixedDeltaTime * lerpSpeed);
+
 
             RotateDogSprite(horizontalInput, verticalInput);
             transform.position += new Vector3(velocity.x, velocity.y, 0);
