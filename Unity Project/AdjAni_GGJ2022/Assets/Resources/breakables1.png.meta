@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9e6666176e0d7a147b7805a8a7a22e33
+guid: 2d6162e765408f34f8a6a165be9e5389
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -140,106 +140,148 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: furniture_0
+      name: breakables1_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 558
-        width: 387
-        height: 191
+        y: 500
+        width: 500
+        height: 500
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a2a5ce80e56eba54ca9441bedcd8069e
-      internalID: -1768931667
+      spriteID: d03c7f141c366154f88c07f0979b9c65
+      internalID: 887480418
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: furniture_2
+      name: breakables1_1
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a151dc5374ccbaa43af0e4b37bf412fe
+      internalID: 1518541885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: breakables1_2
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d69b6e4aeb725f647a44587228d234de
+      internalID: -133847298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: breakables1_3
       rect:
         serializedVersion: 2
         x: 0
-        y: 339
-        width: 366
-        height: 213
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 42492e11252cef44fb3e572bcab7d77e
-      internalID: 724279697
+      spriteID: 9a1c50003e6e1e44b858bfb50fbf44df
+      internalID: 1631015169
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: furniture_4
+      name: breakables1_4
       rect:
         serializedVersion: 2
-        x: 387
-        y: 358
-        width: 242
-        height: 391
+        x: 500
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6a4b20c1bfcc21c449e4cc6ea62b2411
-      internalID: -1443026389
+      spriteID: a7da8610cb14f254a8751c4702a88ce9
+      internalID: 414108076
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: furniture_6
+      name: breakables1_5
       rect:
         serializedVersion: 2
-        x: 0
-        y: 15
-        width: 160
-        height: 305
+        x: 1000
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5bb9180754bcae140b68a5a750b0005f
-      internalID: -752958527
+      spriteID: 395e4f21b8cf50f42bcc404cfcc8ff94
+      internalID: -981302999
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: furniture_7
+      name: breakables1_6
       rect:
         serializedVersion: 2
-        x: 164
-        y: 76
-        width: 148
-        height: 244
+        x: 1500
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6bbdec7c916362547be8059b8803381e
-      internalID: 1604733396
+      spriteID: 37546bd5f96a1754aaf65a97416b4956
+      internalID: 1292232590
       vertices: []
       indices: 
       edges: []
@@ -247,7 +289,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 4f8dceacf1f7651429bce4c6800d503d
+    spriteID: b08467a6de6637e468a52b43f61fe390
     internalID: 0
     vertices: []
     indices: 
@@ -255,15 +297,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      furniture_1: 126070222
-      furniture_8: 1107980023
-      furniture_6: -752958527
-      furniture_2: 724279697
-      furniture_3: 78792239
-      furniture_4: -1443026389
-      furniture_5: 1849450066
-      furniture_7: 1604733396
-      furniture_0: -1768931667
+      breakables1_1: 1518541885
+      breakables1_2: -133847298
+      breakables1_4: 414108076
+      breakables1_6: 1292232590
+      breakables1_0: 887480418
+      breakables1_5: -981302999
+      breakables1_3: 1631015169
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
