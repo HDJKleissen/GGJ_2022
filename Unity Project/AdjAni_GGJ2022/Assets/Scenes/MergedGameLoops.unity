@@ -2314,7 +2314,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 0.6578035, y: 1}
+    m_SensorSize: {x: 1.7777778, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -8606,6 +8606,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5032644227676942492, guid: 1b15cfcf34990534097787b3ea7bd213, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b15cfcf34990534097787b3ea7bd213, type: 3}
 --- !u!1001 &2998231587000359405
@@ -8776,6 +8780,10 @@ PrefabInstance:
     - target: {fileID: 3273213516157834044, guid: a28350f7c37eb784c9d5259d29f76350, type: 3}
       propertyPath: m_Name
       value: Plant
+      objectReference: {fileID: 0}
+    - target: {fileID: 5074426647384312377, guid: a28350f7c37eb784c9d5259d29f76350, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a28350f7c37eb784c9d5259d29f76350, type: 3}
@@ -8977,6 +8985,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 79118537}
     m_Modifications:
+    - target: {fileID: 3647728130778711421, guid: 180268b02d55f2046a586f728f4d4e7d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7383479911151896917, guid: 180268b02d55f2046a586f728f4d4e7d, type: 3}
       propertyPath: m_Name
       value: Lamp
@@ -9106,10 +9118,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1891697869, guid: 214e390840855284b80b3f00355b29e0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2
+      objectReference: {fileID: 0}
     - target: {fileID: 1891697872, guid: 214e390840855284b80b3f00355b29e0, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1618759322}
+    - target: {fileID: 1891697872, guid: 214e390840855284b80b3f00355b29e0, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -766316389
+      objectReference: {fileID: 0}
     - target: {fileID: 7544294459738298617, guid: 214e390840855284b80b3f00355b29e0, type: 3}
       propertyPath: m_Name
       value: Dog
@@ -9167,6 +9187,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 79118537}
     m_Modifications:
+    - target: {fileID: 3785714711742626281, guid: 2bc6f92036cb55d4cbfbedd9b187c491, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8067859847454277750, guid: 2bc6f92036cb55d4cbfbedd9b187c491, type: 3}
       propertyPath: m_Name
       value: Vase
