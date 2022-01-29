@@ -29,7 +29,7 @@ public class ChaseObject : MonoBehaviour
         AIDestination = new GameObject().transform;
         AIDestination.name = name + " Destination";
         AIDestinationSetter.target = AIDestination;
-        AIDestination.position = FindNewRandomPosition();
+        FindNewRandomDestination();
     }
 
     // Update is called once per frame
@@ -45,13 +45,27 @@ public class ChaseObject : MonoBehaviour
             else
             {
                 findPositionTimer = 0;
-                AIDestination.position = FindNewRandomPosition();
+                FindNewRandomDestination();
             }
         }
         chickenAnimator.AnimateChicken(AIPath.velocity.x > 0, AIPath.velocity.magnitude > 2f);
         previousPosition = transform.position;
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (alive)
+        {
+            if (GameController.Instance.GameState == GameState.Dog)
+            {
+                if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "Chicken")
+                {
+                    FindNewRandomDestination();
+                    findPositionTimer = 0;
+                }
+            }
+        }
+    }
     void UpdateAliveness(bool isAlive)
     {
         alive = isAlive;
@@ -71,8 +85,8 @@ public class ChaseObject : MonoBehaviour
         }
     }
 
-    Vector3 FindNewRandomPosition()
+    void FindNewRandomDestination()
     {
-        return new Vector3(Random.Range(LeftWall.position.x, RightWall.position.x), Random.Range(BottomWall.position.y, TopWall.position.y), 0);
+        AIDestination.position = new Vector3(Random.Range(LeftWall.position.x, RightWall.position.x), Random.Range(BottomWall.position.y, TopWall.position.y), 0);
     }
 }
