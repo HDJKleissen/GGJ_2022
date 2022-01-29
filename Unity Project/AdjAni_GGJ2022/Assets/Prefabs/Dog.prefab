@@ -410,6 +410,7 @@ GameObject:
   - component: {fileID: 7544294458373705710}
   - component: {fileID: 7544294458373705711}
   - component: {fileID: 829311917}
+  - component: {fileID: 690321505}
   m_Layer: 3
   m_Name: DogSprite
   m_TagString: Player
@@ -560,6 +561,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c9bf1dca491cc694bab836f86610d910, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &690321505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7544294458373705697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebf2df527154c42aab23804698ac5012, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &7544294459615799073
