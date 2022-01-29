@@ -88,6 +88,7 @@ public class ChaseObject : MonoBehaviour
         //HandleKill();
         if (alive)
         {
+            FMODUnity.RuntimeManager.PlayOneShotAttached("event:/Chicken_Die", gameObject);
             UpdateAliveness(false);
             // Inform gamecontroller we are dead
             GameController.Instance.KillChaseObject(this);
