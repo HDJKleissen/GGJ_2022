@@ -22,7 +22,7 @@ public class Fixable : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        fixTmp.text = $"SMASH {input.ToString().ToUpper()} {currentInteractions}/{requiredInteractions}";
+        fixTmp.text = $"{input.ToString().ToUpper()} {currentInteractions}/{requiredInteractions}";
     }
 
     public bool IsFixing()
@@ -36,6 +36,7 @@ public class Fixable : MonoBehaviour
 
             if(PS != null)
             {
+                PS.gameObject.SetActive(true);
                 PS.Stop();
                 PS.Play();
             }
