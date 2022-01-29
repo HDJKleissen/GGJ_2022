@@ -1218,7 +1218,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.6206896, y: 1}
+    m_SensorSize: {x: 0.85828876, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -6679,6 +6679,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1862749610}
   m_CullTransparentMesh: 1
+--- !u!50 &1872729206 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 7145259379405052810, guid: 611388d625cb9784e87d2c9dbb6d64f5, type: 3}
+  m_PrefabInstance: {fileID: 7145259378775651263}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1921013609
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7194,6 +7199,18 @@ PrefabInstance:
       propertyPath: DontShade
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 41491668329137381, guid: 611388d625cb9784e87d2c9dbb6d64f5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 482963950820826627, guid: 611388d625cb9784e87d2c9dbb6d64f5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4476097718365378927, guid: 611388d625cb9784e87d2c9dbb6d64f5, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1168498380}
     - target: {fileID: 7145259378892137812, guid: 611388d625cb9784e87d2c9dbb6d64f5, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -7234,6 +7251,10 @@ PrefabInstance:
       propertyPath: LeftWall
       value: 
       objectReference: {fileID: 1087384510}
+    - target: {fileID: 7145259379405052809, guid: 611388d625cb9784e87d2c9dbb6d64f5, type: 3}
+      propertyPath: rigbod2D
+      value: 
+      objectReference: {fileID: 1872729206}
     - target: {fileID: 7145259379405052809, guid: 611388d625cb9784e87d2c9dbb6d64f5, type: 3}
       propertyPath: RightWall
       value: 
