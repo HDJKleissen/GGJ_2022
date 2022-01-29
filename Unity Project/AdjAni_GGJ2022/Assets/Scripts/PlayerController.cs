@@ -35,11 +35,9 @@ public class PlayerController : MonoBehaviour
 
     void UpdateObjectInteraction()
     {
-        foreach(Breakable b in interactingObjects)
+        List<Breakable> interactables = interactingObjects.FindAll(obj => obj.ItemBroken && !obj.ItemFixed);
+        foreach(Breakable b in interactables)
         {
-            if (!b.ItemBroken || b.ItemFixed)
-                return;
-
             b.Fix();
         }
     }
