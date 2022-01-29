@@ -37,7 +37,7 @@ public class Fixable : MonoBehaviour
                 PS.Play();
             }
             transform.DOShakeRotation(0.3f, new Vector3(0, 0, 1), 5,10);
-            transform.DOPunchScale(new Vector3((float)transform.localScale.x+0.1f, (float)transform.localScale.y + 0.1f, 1), 0.3f, 10, 1);
+            //transform.DOPunchScale(new Vector3((float)transform.localScale.x+0.1f, (float)transform.localScale.y + 0.1f, 1), 0.3f, 10, 1);
             currentInteractions++;
         }
 
