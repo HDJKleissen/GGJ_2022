@@ -11,6 +11,7 @@ public class Fixable : MonoBehaviour
     [SerializeField] private int requiredInteractions = 5;
     [SerializeField] private int currentInteractions = 0;
 
+    [SerializeField] private ParticleSystem PS;
     
     // Start is called before the first frame update
     void Start()
@@ -29,6 +30,12 @@ public class Fixable : MonoBehaviour
         if (Input.GetKeyDown(input))
         {
             GameController.Instance.CamShakeEffect.Shake();
+
+            if(PS != null)
+            {
+                PS.Stop();
+                PS.Play();
+            }
             transform.DOShakeRotation(0.3f, new Vector3(0, 0, 1), 5,10);
             transform.DOPunchScale(new Vector3((float)transform.localScale.x+0.1f, (float)transform.localScale.y + 0.1f, 1), 0.3f, 10, 1);
             currentInteractions++;
