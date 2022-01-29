@@ -25,6 +25,7 @@ public abstract class Breakable : MonoBehaviour
         if (!itemBroken && !itemFixed && GameController.Instance.GameState == GameState.Dog)
         {
             HandleBreak();
+            FMODUnity.RuntimeManager.PlayOneShotAttached("event:/Pot_Break", gameObject);
             itemBroken = true;
             GameController.Instance.BreakBreakable(this);
         }

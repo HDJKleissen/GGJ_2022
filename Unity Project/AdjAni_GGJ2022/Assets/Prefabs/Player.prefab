@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1614376086342105001
 Transform:
   m_ObjectHideFlags: 0
@@ -50,6 +50,11 @@ MonoBehaviour:
   OwnerAnimator: {fileID: 5071221437885985787}
   <MovementSpeed>k__BackingField: 10
   interactingObjects: []
+  ChickenKickenRadius: 0
+  feetCollider: {fileID: 1336191434}
+  ChickenLayer:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!50 &1614376086342105047
 Rigidbody2D:
   serializedVersion: 4
@@ -97,6 +102,8 @@ GameObject:
   - component: {fileID: 1614376086840387858}
   - component: {fileID: 1336191434}
   - component: {fileID: 7112768755104588844}
+  - component: {fileID: 53724171}
+  - component: {fileID: 7949652576629549650}
   m_Layer: 0
   m_Name: Body
   m_TagString: Player
@@ -207,3 +214,27 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &53724171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1614376086840387856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebf2df527154c42aab23804698ac5012, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7949652576629549650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1614376086840387856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15448029c292944b2b997da4a021fb35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

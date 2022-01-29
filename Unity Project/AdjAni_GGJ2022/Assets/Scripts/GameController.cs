@@ -19,6 +19,7 @@ public class GameController : UnitySingleton<GameController>
     float timer = 0;
     List<ChaseObject> chaseObjects = new List<ChaseObject>();
     List<ChaseObject> killedChaseObjects = new List<ChaseObject>();
+    List<ChaseObject> cleanedChaseObjects = new List<ChaseObject>();
 
     List<Breakable> breakables = new List<Breakable>();
     List<Breakable> brokenBreakables = new List<Breakable>();
@@ -101,7 +102,7 @@ public class GameController : UnitySingleton<GameController>
         }
 
         fixedBreakables.Add(breakable);
-        if (fixedBreakables.Count == brokenBreakables.Count)
+        if (cleanedChaseObjects.Count == killedChaseObjects.Count && fixedBreakables.Count == brokenBreakables.Count)
         {
             EndGame();
         }
@@ -126,6 +127,22 @@ public class GameController : UnitySingleton<GameController>
 
             GameStateSwitchOverlay.StartFade();
             MusicPlayer.SetOwner(true);
+        }
+    }
+    public void CleanChaseObject(ChaseObject co)
+    {
+        if (cleanedChaseObjects.Contains(co))
+        {
+            Debug.LogError("Trying to add an already cleaned object to the cleaned objects list, something went wrong!");
+            return;
+        }
+
+        cleanedChaseObjects.Add(co);
+        co.gameObject.SetActive(false);
+
+        if(cleanedChaseObjects.Count == killedChaseObjects.Count && fixedBreakables.Count == brokenBreakables.Count)
+        {
+            EndGame();
         }
     }
 

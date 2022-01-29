@@ -16,6 +16,9 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private List<Breakable> interactingObjects;
 
+    public float ChickenKickenRadius, ChickenKickForce;
+    public CircleCollider2D feetCollider;
+    public LayerMask ChickenLayer;
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
@@ -33,6 +36,17 @@ public class PlayerController : MonoBehaviour
             //Rotate();
             OwnerAnimator.AnimatePlayer(new Vector2(horizontalInput, verticalInput));
             UpdateObjectInteraction();
+
+            if (Input.GetKey(KeyCode.Space))
+            {
+                OwnerAnimator.Sweep();
+                Collider2D[] hits = Physics2D.OverlapCircleAll(feetCollider.bounds.center, ChickenKickenRadius, ChickenLayer);
+                foreach(Collider2D collider in hits)
+                {
+                    Debug.Log("Kicking " + collider.name);
+                    collider.GetComponent<Rigidbody2D>().velocity = (feetCollider.bounds.center - collider.bounds.center).normalized * ChickenKickForce;
+                }
+            }
         }
         else
         {
@@ -49,9 +63,9 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        Breakable breakable = collision.gameObject.GetComponentInParent<Breakable>();
+        Breakable breakable = collision.GetComponentInParent<Breakable>();
         if (breakable != null)
         {
             if (breakable.FixableObject != null && breakable.ItemBroken && !breakable.ItemFixed)
@@ -62,7 +76,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            breakable = collision.gameObject.GetComponent<Breakable>();
+            breakable = collision.GetComponent<Breakable>();
             if (breakable != null)
             {
                 if (breakable.FixableObject != null && breakable.ItemBroken && !breakable.ItemFixed)
@@ -75,9 +89,9 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
+    private void OnTriggerExit2D(Collider2D collision)
     {
-        Breakable breakable = collision.gameObject.GetComponentInParent<Breakable>();
+        Breakable breakable = collision.GetComponentInParent<Breakable>();
         if (breakable != null)
         {
             if (breakable.FixableObject != null)
@@ -86,7 +100,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            breakable = collision.gameObject.GetComponent<Breakable>();
+            breakable = collision.GetComponent<Breakable>();
             if (breakable != null)
             {
                 if (breakable.FixableObject != null)
