@@ -409,6 +409,7 @@ GameObject:
   - component: {fileID: 7544294458373705709}
   - component: {fileID: 7544294458373705710}
   - component: {fileID: 7544294458373705711}
+  - component: {fileID: 829311917}
   m_Layer: 3
   m_Name: DogSprite
   m_TagString: Untagged
@@ -452,7 +453,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a7db19034daa80449b64b62bf8c90624, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -549,6 +550,18 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0.8}
   serializedVersion: 2
   m_Radius: 0.3
+--- !u!114 &829311917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7544294458373705697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9bf1dca491cc694bab836f86610d910, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7544294459615799073
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,10 +12,8 @@ public class BreakableTransform : Breakable
 
     public override bool HandleFix()
     {
-        Debug.Log("Check for Fixing predicate..");
         if (FixableObject.IsFixing())
         {
-            Debug.Log("Fixed object!");
             transform.rotation = Quaternion.Euler(Vector3.zero);
             return true;
         }

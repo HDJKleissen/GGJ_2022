@@ -26,7 +26,6 @@ public class GameStateSwitchOverlay : MonoBehaviour
         BlackScreen.gameObject.SetActive(true);
         GameStateSwitchImage.gameObject.SetActive(true);
         GameStateSwitchBG.gameObject.SetActive(true);
-        Debug.Log("aaa");
         GameController.Instance.PlayerHasControl = false;
         BlackScreen.CrossFadeAlpha(1, FadeInTime / 2, false);
         StartCoroutine(CoroutineHelper.DelaySeconds(() =>

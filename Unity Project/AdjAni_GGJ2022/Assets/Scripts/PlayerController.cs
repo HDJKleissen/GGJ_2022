@@ -46,7 +46,6 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("Collision!");
         Breakable breakable = collision.gameObject.GetComponent<Breakable>();
         Debug.Log(breakable);
         if (breakable != null)

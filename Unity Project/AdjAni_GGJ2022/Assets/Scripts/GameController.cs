@@ -11,6 +11,7 @@ public class GameController : UnitySingleton<GameController>
     public PlayerController Owner;
     public CinemachineVirtualCamera VirtualCamera;
     public GameStateSwitchOverlay GameStateSwitchOverlay;
+    public GreyScaleScene GreyScaleScene;
     public float OwnerTimeAmount;
 
     float timer = 0;
@@ -29,6 +30,7 @@ public class GameController : UnitySingleton<GameController>
     // Start is called before the first frame update
     void Start()    
     {
+        GreyScaleScene.Shade();
     }
 
     // Update is called once per frame
@@ -131,6 +133,7 @@ public class GameController : UnitySingleton<GameController>
         {
             breakable.PrepForFixing();
         }
+        GreyScaleScene.Shade();
     }
 
     public void EndGame()
