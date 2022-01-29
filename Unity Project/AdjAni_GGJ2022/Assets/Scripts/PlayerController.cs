@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public OwnerAnimator OwnerAnimator;
+
     [field: SerializeField] public float MovementSpeed { get; private set; }
 
     private Rigidbody2D body;
@@ -27,9 +29,14 @@ public class PlayerController : MonoBehaviour
             horizontalInput = Input.GetAxisRaw("Horizontal"); // -1 is left
             verticalInput = Input.GetAxisRaw("Vertical"); // -1 is down
 
-            Rotate();
 
+            //Rotate();
+            OwnerAnimator.AnimatePlayer(new Vector2(horizontalInput, verticalInput));
             UpdateObjectInteraction();
+        }
+        else
+        {
+            OwnerAnimator.AnimatePlayer(Vector2.zero);
         }
     }
 
