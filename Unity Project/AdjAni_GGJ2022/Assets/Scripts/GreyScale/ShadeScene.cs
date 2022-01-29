@@ -36,9 +36,13 @@ public class ShadeScene : MonoBehaviour
 
     void SetGreyScale(List<SpriteRenderer> renderers, bool on)
     {
+        //recolor everything except for components that are inversely colored
         foreach(SpriteRenderer r in renderers)
         {
-            r.material.SetInt("_IsGreyScale", Convert.ToInt32(on));
+            if(!r.gameObject.TryGetComponent(out InverseGreyScale igs))
+            {
+                r.material.SetInt("_IsGreyScale", Convert.ToInt32(on));
+            }
         }
     }
 }
