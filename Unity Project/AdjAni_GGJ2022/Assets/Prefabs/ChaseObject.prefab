@@ -141,7 +141,7 @@ GameObject:
   - component: {fileID: 7145259378892137812}
   - component: {fileID: 803023391114508028}
   - component: {fileID: 4476097718365378927}
-  - component: {fileID: 1168498380}
+  - component: {fileID: 444553658}
   m_Layer: 6
   m_Name: AliveSprite
   m_TagString: Chicken
@@ -240,9 +240,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6791f3b525668694eb68b8159cc59cfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 1168498380}
+  animator: {fileID: 444553658}
   sprenderer: {fileID: 7145259378892137812}
---- !u!95 &1168498380
+--- !u!95 &444553658
 Animator:
   serializedVersion: 4
   m_ObjectHideFlags: 0

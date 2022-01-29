@@ -66,6 +66,15 @@ public class ChaseObject : MonoBehaviour
             }
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag == "Door" && GameController.Instance.GameState == GameState.Owner)
+        {
+            GameController.Instance.CleanChaseObject(this);
+        }
+    }
+
     void UpdateAliveness(bool isAlive)
     {
         alive = isAlive;
