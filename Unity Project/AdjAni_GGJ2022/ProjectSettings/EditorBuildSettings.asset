@@ -9,15 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 3f2fcf8d03a544a4cb3a06d3382e91f5
   - enabled: 1
-    path: Assets/Scenes/DogControllerScene.unity
-    guid: 0d50e9eefed9a594fbce765699389972
-  - enabled: 1
-    path: Assets/Scenes/BreakablesScene.unity
-    guid: ea701ea104ead144e98d3c0a4d9c049b
-  - enabled: 1
     path: Assets/Scenes/OptionsMenu.unity
     guid: 50c2ee4ac74995e48855492e76b57ddb
   - enabled: 1
-    path: Assets/Scenes/PauseMenuScene.unity
-    guid: d06b5925fc7e39c42adcf21af531888b
+    path: Assets/Scenes/MergedGameLoops.unity
+    guid: 8cfd5924c8d941048ab30bd0de5e45b0
   m_configObjects: {}
