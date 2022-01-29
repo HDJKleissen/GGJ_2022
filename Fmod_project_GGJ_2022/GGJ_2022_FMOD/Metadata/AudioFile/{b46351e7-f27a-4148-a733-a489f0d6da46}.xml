@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{b46351e7-f27a-4148-a733-a489f0d6da46}">
 		<property name="assetPath">
-			<value>GGJ_2022 Owner Music Accelerando (with extra bar in front).wav</value>
+			<value>Music/GGJ_2022 Owner Music Accelerando (with extra bar in front).wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>

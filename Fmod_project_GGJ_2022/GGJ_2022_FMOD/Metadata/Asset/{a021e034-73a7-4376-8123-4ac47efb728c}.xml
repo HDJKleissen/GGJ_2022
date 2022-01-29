@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EncodableAsset" id="{a021e034-73a7-4376-8123-4ac47efb728c}">
+		<property name="assetPath">
+			<value>Pot Breaks/</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{6de12829-caa8-406c-985b-4c50def66cc3}</destination>
+		</relationship>
+	</object>
+</objects>
