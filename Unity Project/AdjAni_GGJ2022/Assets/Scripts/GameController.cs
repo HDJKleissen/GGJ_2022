@@ -12,6 +12,7 @@ public class GameController : UnitySingleton<GameController>
     public CinemachineVirtualCamera VirtualCamera;
     public GameStateSwitchOverlay GameStateSwitchOverlay;
     public GreyScaleScene GreyScaleScene;
+    public ShakeEffectInCinemachine CamShakeEffect;
     public float OwnerTimeAmount;
 
     float timer = 0;

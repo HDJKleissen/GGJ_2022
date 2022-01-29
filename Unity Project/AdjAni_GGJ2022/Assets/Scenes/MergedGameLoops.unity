@@ -1690,6 +1690,7 @@ MonoBehaviour:
   VirtualCamera: {fileID: 585002809}
   GameStateSwitchOverlay: {fileID: 1202777006}
   GreyScaleScene: {fileID: 919743674}
+  CamShakeEffect: {fileID: 919743676}
   OwnerTimeAmount: 120
   PlayerHasControl: 1
 --- !u!4 &919743673
@@ -1734,10 +1735,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   VirtualCamera: {fileID: 585002809}
   <ShakeDuration>k__BackingField: 0.3
-  <ShakeAmplitude>k__BackingField: 1.2
-  <ShakeFrequency>k__BackingField: 2
-  <ZoomDuration>k__BackingField: 0.2
-  <ZoomScale>k__BackingField: 0.3
+  <ShakeAmplitude>k__BackingField: 2.49
+  <ShakeFrequency>k__BackingField: 4.79
+  <ZoomDuration>k__BackingField: 0.23
+  <ZoomScale>k__BackingField: 0.58
+  <RotationDuration>k__BackingField: 0.139
+  <RotationStrength>k__BackingField: 0.48
+  <RotationVibrato>k__BackingField: 8
+  <RotationRandomness>k__BackingField: 85
 --- !u!1 &929676092
 GameObject:
   m_ObjectHideFlags: 0
