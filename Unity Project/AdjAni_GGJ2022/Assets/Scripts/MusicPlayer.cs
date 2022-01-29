@@ -18,9 +18,15 @@ public class MusicPlayer : MonoBehaviour
         Music.release();
     }
 
-    public void SetSpeedUp()
+    private void Update()
     {
-        if (fast)
+        SetSpeedUp();
+        SetOwner();
+    }
+
+    void SetSpeedUp()
+    {
+        if (fast == true)
         {
             Music.setParameterByName("SpeedUp", 1f, false);
         }
@@ -30,9 +36,9 @@ public class MusicPlayer : MonoBehaviour
         }
     }
 
-    public void SetOwner()
+    void SetOwner()
     {
-        if (owner)
+        if (owner == true)
         {
             Music.setParameterByName("Owner", 1f, false);
         }
