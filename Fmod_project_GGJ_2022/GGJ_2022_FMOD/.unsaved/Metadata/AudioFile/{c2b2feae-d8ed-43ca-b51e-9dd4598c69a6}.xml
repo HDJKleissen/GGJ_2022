@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
-	<object class="AudioFile" id="{adb3efed-dedf-4ab3-ac3d-9bded49287ff}">
+	<object class="AudioFile" id="{c2b2feae-d8ed-43ca-b51e-9dd4598c69a6}">
 		<property name="assetPath">
-			<value>GGJ_2022 Owner Music Loop Fast.wav</value>
-		</property>
-		<property name="isStreaming">
-			<value>true</value>
+			<value>GGJ_2022 Dog Music Loop Slow.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>
@@ -14,7 +11,7 @@
 			<value>2</value>
 		</property>
 		<property name="length">
-			<value>28.656729166666668</value>
+			<value>36.226416666666665</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{6de12829-caa8-406c-985b-4c50def66cc3}</destination>
