@@ -11,8 +11,6 @@ public class DogController : MonoBehaviour
     public float LerpSpeed, SlowdownLerpSpeed, AccelerateLerpSpeed, AccelerateGatePercentage;
     public float MaxVelocity;
 
-    public TextMeshProUGUI StateText, SpeedText, DesiredSpeedText;
-
     public Vector2 velocity = Vector2.zero;
 
     // Start is called before the first frame update
@@ -52,23 +50,15 @@ public class DogController : MonoBehaviour
 
             float lerpSpeed = LerpSpeed;
 
-            DesiredSpeedText.SetText("Desired: " + desiredVelocity + ", speed: " + desiredVelocity.magnitude);
-            SpeedText.SetText("Velocity: " + velocity + ", speed: " + velocity.magnitude);
-
             if (desiredVelocity == Vector2.zero)
             {
-                StateText.SetText("Slowing");
                 lerpSpeed *= SlowdownLerpSpeed;
             }
             else if (desiredVelocity.magnitude * AccelerateGatePercentage >= velocity.magnitude)
             {
-                StateText.SetText("Accelerating");
                 lerpSpeed *= AccelerateLerpSpeed;
             }
-            else
-            {
-                StateText.SetText("Max speed?");
-            }
+           
             velocity = Vector2.Lerp(velocity, desiredVelocity, Time.fixedDeltaTime * lerpSpeed);
 
 
@@ -81,6 +71,7 @@ public class DogController : MonoBehaviour
     {
         float newZrot = DogSprite.rotation.eulerAngles.z;
 
+        // Terribad no good way of doing this but i'm lazy xd
         if (horizontalInput < 0)
         {
             if (verticalInput < 0)
