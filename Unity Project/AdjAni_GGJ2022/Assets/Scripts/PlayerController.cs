@@ -46,7 +46,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Breakable breakable = collision.gameObject.GetComponent<Breakable>();
+        Breakable breakable = collision.gameObject.GetComponentInParent<Breakable>();
         if (breakable != null)
         {
             if (breakable.FixableObject != null && breakable.ItemBroken && !breakable.ItemFixed)
@@ -55,16 +55,39 @@ public class PlayerController : MonoBehaviour
                 interactingObjects.Add(breakable);
             }
         }
+        else
+        {
+            breakable = collision.gameObject.GetComponent<Breakable>();
+            if (breakable != null)
+            {
+                if (breakable.FixableObject != null && breakable.ItemBroken && !breakable.ItemFixed)
+                {
+                    breakable.FixableObject.gameObject.SetActive(true);
+                    interactingObjects.Add(breakable);
+                }
+            }
+
+        }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        Breakable breakable = collision.gameObject.GetComponent<Breakable>();
+        Breakable breakable = collision.gameObject.GetComponentInParent<Breakable>();
         if (breakable != null)
         {
-            if(breakable.FixableObject != null)
+            if (breakable.FixableObject != null)
                 breakable.FixableObject.gameObject.SetActive(false);
             interactingObjects.Remove(breakable);
+        }
+        else
+        {
+            breakable = collision.gameObject.GetComponent<Breakable>();
+            if (breakable != null)
+            {
+                if (breakable.FixableObject != null)
+                    breakable.FixableObject.gameObject.SetActive(false);
+                interactingObjects.Remove(breakable);
+            }
         }
     }
 
