@@ -12,29 +12,45 @@ public abstract class Breakable : MonoBehaviour
     [SerializeField] protected bool itemFixed = false;
     [field: SerializeField] public Fixable FixableObject { get; private set;}
 
-    public bool ItemBroken { get => itemBroken; }
-    public bool ItemFixed { get => itemFixed; }
+    public bool ItemBroken => itemBroken;
+    public bool ItemFixed => itemFixed;
+
+    private void Start()
+    {
+        GameController.Instance.RegisterBreakable(this);
+    }
 
     public void Break()
     {
-        if (!itemBroken && !itemFixed)
+        if (!itemBroken && !itemFixed && GameController.Instance.GameState == GameState.Dog)
         {
             HandleBreak();
             itemBroken = true;
+            GameController.Instance.BreakBreakable(this);
         }
     }
+
     public void Fix()
     {
-        if(itemBroken && !itemFixed)
+        if (itemBroken && !itemFixed && GameController.Instance.GameState == GameState.Owner)
         {
             if (HandleFix())
             {
-                itemBroken = false;
                 itemFixed = true;
+                GameController.Instance.FixBreakable(this);
             }
         }
     }
 
+    public void PrepForFixing()
+    {
+        if (itemBroken && !ItemFixed)
+        {
+            HandlePrepForFixing();
+        }
+    }
+
+    public abstract void HandlePrepForFixing();
     public abstract void HandleBreak();
     public abstract bool HandleFix();
 }
