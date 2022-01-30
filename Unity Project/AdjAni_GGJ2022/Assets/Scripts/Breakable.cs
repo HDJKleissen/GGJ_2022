@@ -38,7 +38,7 @@ public abstract class Breakable : MonoBehaviour
         {
             if (HandleFix())
             {
-                GameController.Instance.CamShakeEffect.Shake();
+                GameController.Instance.ShakeCamera();
                 itemFixed = true;
                 GameController.Instance.FixBreakable(this);
             }

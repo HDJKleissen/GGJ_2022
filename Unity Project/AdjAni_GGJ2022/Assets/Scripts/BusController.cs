@@ -20,8 +20,9 @@ public class BusController : MonoBehaviour
         Bus = FMODUnity.RuntimeManager.GetBus("bus:/" + BusPath);
         Bus.getVolume(out BusVolume, out FinalBusVolume);
 
+
         Slider = GetComponent<Slider>();
-        Slider.value = BusVolume;
+        //Slider.value = BusVolume;
 
         if(BusPath == "SFX")
         {
@@ -34,7 +35,7 @@ public class BusController : MonoBehaviour
     public void VolumeLevel(float SliderValue)
     {
         Bus.setVolume(SliderValue);
-
+        PlayerPrefs.SetFloat(BusPath + "Volume", SliderValue);
         if(BusPath == "SFX")
         {
             LevelTest.getPlaybackState(out pb);
@@ -45,7 +46,7 @@ public class BusController : MonoBehaviour
 
     private void OnDestroy()
     {
-        if (BusPath == "SFX")
+        if (BusPath == "SFX") 
             LevelTest.release();
     }
 }

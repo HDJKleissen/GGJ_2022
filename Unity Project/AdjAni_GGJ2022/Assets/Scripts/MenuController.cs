@@ -1,3 +1,4 @@
+using FMOD.Studio;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,7 +14,11 @@ public class MenuController : MonoBehaviour
         MusicPlayer.Instance.SetSpeedUp(false);
         MusicPlayer.Instance.SetOwner(false);
         MusicPlayer.Instance.SetWin(false);
+        Bus SFXBus = FMODUnity.RuntimeManager.GetBus("bus:/" + "SFX");
+        Bus MusicBus = FMODUnity.RuntimeManager.GetBus("bus:/" + "Music");
 
+        SFXBus.setVolume(PlayerPrefs.GetFloat("SFXVolume",1));
+        MusicBus.setVolume(PlayerPrefs.GetFloat("MusicVolume", 1));
     }
 
     // Update is called once per frame

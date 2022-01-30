@@ -102,7 +102,7 @@ public class ChaseObject : MonoBehaviour
         if (alive)
         {
             ChickenSounds.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
-            GameController.Instance.CamShakeEffect.Shake();
+            GameController.Instance.ShakeCamera();
             FMODUnity.RuntimeManager.PlayOneShotAttached("event:/Chicken_Die", gameObject);
             UpdateAliveness(false);
             // Inform gamecontroller we are dead

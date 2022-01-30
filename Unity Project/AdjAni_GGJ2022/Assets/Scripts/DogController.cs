@@ -166,7 +166,7 @@ public class DogController : MonoBehaviour
         RotateDogSprite(pounceDirection.x, pounceDirection.y);
         velocity = pounceDirection * PounceSpeed * Time.fixedDeltaTime;
         desiredVelocity = pounceDirection * PounceSpeed * Time.fixedDeltaTime;
-        GameController.Instance.CamShakeEffect.Shake();
+        GameController.Instance.ShakeCamera();
 
         yield return new WaitForSeconds(PounceJumpTime);
 

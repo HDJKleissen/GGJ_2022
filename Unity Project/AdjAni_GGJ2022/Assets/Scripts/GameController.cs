@@ -29,11 +29,14 @@ public class GameController : UnitySingleton<GameController>
 
     public GameState GameState { get; private set; } = GameState.Dog;
     public bool PlayerHasControl = true;
+
+    bool screenShakeEnabled = true;
+
     // Start is called before the first frame update
     void Start()    
     {
         //GreyScaleScene.Shade();
-        
+        screenShakeEnabled = PlayerPrefs.GetInt("ScreenShakeEnabled", 1) == 1;
     }
 
     // Update is called once per frame
@@ -59,6 +62,14 @@ public class GameController : UnitySingleton<GameController>
                 }
             }
             UIController.UpdateTimer(timer);
+        }
+    }
+
+    public void ShakeCamera()
+    {
+        if (screenShakeEnabled)
+        {
+            CamShakeEffect.Shake();
         }
     }
 

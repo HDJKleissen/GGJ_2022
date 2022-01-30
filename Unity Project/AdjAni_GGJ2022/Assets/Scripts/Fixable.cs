@@ -33,7 +33,7 @@ public class Fixable : MonoBehaviour
             //  ?????
 
             GameController.Instance.Owner.OwnerAnimator.Sweep();
-            GameController.Instance.CamShakeEffect.Shake();
+            GameController.Instance.ShakeCamera();
 
             if(PS != null)
             {
