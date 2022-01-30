@@ -7,8 +7,8 @@ using TMPro;
 
 public class DisplayHighscores : MonoBehaviour 
 {
-    public TMPro.TextMeshProUGUI[] rNames;
-    public TMPro.TextMeshProUGUI[] rScores;
+    public TextMeshProUGUI[] rNames;
+    public TextMeshProUGUI[] rScores;
     HighScores myScores;
 
     void Start() //Fetches the Data at the beginning
@@ -28,7 +28,7 @@ public class DisplayHighscores : MonoBehaviour
             if (highscoreList.Length > i)
             {
                 rScores[i].text = highscoreList[i].score.ToString();
-                rNames[i].text = highscoreList[i].username;
+                rNames[i].text = highscoreList[i].username.Replace('+',' ');
             }
         }
 
