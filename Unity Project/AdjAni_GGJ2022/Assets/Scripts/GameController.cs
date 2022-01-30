@@ -86,7 +86,7 @@ public class GameController : UnitySingleton<GameController>
 
     public void NoBrokenBreakablesCheck()
     {
-        if (brokenBreakables.Count == 0)
+        if (cleanedChaseObjects.Count == killedChaseObjects.Count && fixedBreakables.Count == brokenBreakables.Count)
         {
             EndGame();
         }
@@ -170,8 +170,8 @@ public class GameController : UnitySingleton<GameController>
         scoreObject.TotalBreakables = breakables.Count;
         scoreObject.OwnerTime = GameController.Instance.OwnerTimeAmount - timer;
         scoreObject.BreakablesFixed = fixedBreakables.Count;
-        //UIController.OpenEndScreen(scoreObject);
-        UIController.OpenHighScoreScene(scoreObject);
+        UIController.OpenEndScreen(scoreObject);
+        //UIController.OpenHighScoreScene(scoreObject);
         MusicPlayer.Instance.SetWin(true);
         MusicPlayer.Instance.SetOwner(false);
         MusicPlayer.Instance.SetSpeedUp(false);

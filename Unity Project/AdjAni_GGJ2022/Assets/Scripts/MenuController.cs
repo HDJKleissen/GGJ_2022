@@ -9,7 +9,11 @@ public class MenuController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        MusicPlayer.Instance.SetMenu(true);
+        MusicPlayer.Instance.SetSpeedUp(false);
+        MusicPlayer.Instance.SetOwner(false);
+        MusicPlayer.Instance.SetWin(false);
+
     }
 
     // Update is called once per frame

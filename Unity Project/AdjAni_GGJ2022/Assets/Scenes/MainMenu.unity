@@ -215,6 +215,7 @@ GameObject:
   - component: {fileID: 292939221}
   - component: {fileID: 292939220}
   - component: {fileID: 292939219}
+  - component: {fileID: 292939222}
   m_Layer: 5
   m_Name: QuitButton
   m_TagString: Untagged
@@ -337,6 +338,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 292939217}
   m_CullTransparentMesh: 1
+--- !u!114 &292939222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 292939217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 475933632}
+          m_TargetAssemblyTypeName: SetMenuChickenLocation, Assembly-CSharp
+          m_MethodName: SetLocationY
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &330397939
 GameObject:
   m_ObjectHideFlags: 0
@@ -349,6 +379,7 @@ GameObject:
   - component: {fileID: 330397943}
   - component: {fileID: 330397942}
   - component: {fileID: 330397941}
+  - component: {fileID: 330397944}
   m_Layer: 5
   m_Name: StartButton
   m_TagString: Untagged
@@ -483,6 +514,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330397939}
   m_CullTransparentMesh: 1
+--- !u!114 &330397944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 330397939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 475933632}
+          m_TargetAssemblyTypeName: SetMenuChickenLocation, Assembly-CSharp
+          m_MethodName: SetLocationY
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &371379386
 GameObject:
   m_ObjectHideFlags: 0
@@ -721,6 +781,7 @@ GameObject:
   - component: {fileID: 475933631}
   - component: {fileID: 475933630}
   - component: {fileID: 475933629}
+  - component: {fileID: 475933632}
   m_Layer: 5
   m_Name: Chicken
   m_TagString: Untagged
@@ -806,6 +867,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 475933627}
   m_CullTransparentMesh: 1
+--- !u!114 &475933632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 475933627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff8a1b3fb99dead43aba60fe219c1f18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &623972965
 GameObject:
   m_ObjectHideFlags: 0
@@ -818,6 +891,7 @@ GameObject:
   - component: {fileID: 623972969}
   - component: {fileID: 623972968}
   - component: {fileID: 623972967}
+  - component: {fileID: 623972970}
   m_Layer: 5
   m_Name: OptionsButton
   m_TagString: Untagged
@@ -940,6 +1014,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 623972965}
   m_CullTransparentMesh: 1
+--- !u!114 &623972970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 623972965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 475933632}
+          m_TargetAssemblyTypeName: SetMenuChickenLocation, Assembly-CSharp
+          m_MethodName: SetLocationY
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &941745740
 GameObject:
   m_ObjectHideFlags: 0
@@ -1310,7 +1413,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e2a9c05614bc4e759d5ccb35efe4f9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Menu: 0
+  Menu: 1
   Speedup: 0
   Win: 0
   Owner: 0
