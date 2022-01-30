@@ -3965,7 +3965,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.5991058, y: 1}
+    m_SensorSize: {x: 1.2771982, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -28407,6 +28407,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!212 &1799428494 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 7544294458373705699, guid: 214e390840855284b80b3f00355b29e0, type: 3}
+  m_PrefabInstance: {fileID: 7544294459109749444}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1810241047
 GameObject:
   m_ObjectHideFlags: 0
@@ -30120,6 +30125,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1618759322}
+    - target: {fileID: 7544294458373705710, guid: 214e390840855284b80b3f00355b29e0, type: 3}
+      propertyPath: SpriteRenderer
+      value: 
+      objectReference: {fileID: 1799428494}
     - target: {fileID: 7544294459738298500, guid: 214e390840855284b80b3f00355b29e0, type: 3}
       propertyPath: PounceWindupTime
       value: 0.1

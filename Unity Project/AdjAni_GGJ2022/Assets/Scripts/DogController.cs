@@ -74,7 +74,7 @@ public class DogController : MonoBehaviour
         {
             lastNonZeroInput = new Vector2(horizontalInput, verticalInput).normalized;
         }
-        DogAnimator.AnimateDog(new Vector2(horizontalInput, verticalInput) != Vector2.zero || pouncing);
+        DogAnimator.AnimateDog(new Vector2(horizontalInput, verticalInput) != Vector2.zero || pouncing, verticalInput);
 
         if(PounceCharges < MaxPounceCharges)
         {
