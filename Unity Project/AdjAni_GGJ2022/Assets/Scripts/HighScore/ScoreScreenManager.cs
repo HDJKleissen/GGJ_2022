@@ -10,7 +10,7 @@ public class ScoreScreenManager : MonoBehaviour
     [SerializeField] private GameObject highScoreScreen;
 
     [SerializeField] private TextMeshProUGUI nameTmpro;
-    private HighScores highScores;
+    HighScores highScores;
     // Start is called before the first frame update
     void Start()
     {
@@ -46,7 +46,7 @@ public class ScoreScreenManager : MonoBehaviour
     private bool IsHighScore()
     {
         //if top 10 ask for name
-        if (highScores.scoreList.Length < 10 || GameController.Instance.OwnerTimeAmount > highScores.scoreList[9].score)
+        if (highScores.scoreList.Length < 10 || GameController.Instance.scoreObject.FinalScore > highScores.scoreList[9].score)
         {
             return true;
         }

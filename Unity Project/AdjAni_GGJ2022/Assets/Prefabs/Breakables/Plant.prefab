@@ -186,7 +186,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   input: 32
-  requiredInteractions: 5
+  requiredInteractions: 12
   currentInteractions: 0
   PS: {fileID: 5074426647384312383}
 --- !u!1 &3273213516157834044

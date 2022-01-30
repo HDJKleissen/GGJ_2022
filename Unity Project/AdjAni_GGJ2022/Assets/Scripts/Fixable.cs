@@ -23,6 +23,7 @@ public class Fixable : MonoBehaviour
     void Update()
     {
         fixTmp.text = $"{input.ToString().ToUpper()} {currentInteractions}/{requiredInteractions}";
+        //fixTmp.text = $"SMASH {input.ToString().ToUpper()} \nTO CLEAN DAT SHIT";
     }
 
     public bool IsFixing()

@@ -459,7 +459,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   input: 32
-  requiredInteractions: 5
+  requiredInteractions: 20
   currentInteractions: 0
   PS: {fileID: 5032644227676942490}
 --- !u!1001 &8909163001476607846
