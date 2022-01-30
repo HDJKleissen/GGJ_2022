@@ -24,7 +24,6 @@ public class GameController : UnitySingleton<GameController>
     List<Breakable> brokenBreakables = new List<Breakable>();
     List<Breakable> fixedBreakables = new List<Breakable>();
 
-    bool gameIsRunning;
     public ScoreObject scoreObject = new ScoreObject();
 
     public GameState GameState { get; private set; } = GameState.Dog;

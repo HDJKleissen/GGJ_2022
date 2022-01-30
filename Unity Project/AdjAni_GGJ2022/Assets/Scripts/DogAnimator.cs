@@ -8,6 +8,9 @@ public class DogAnimator : MonoBehaviour
 
     public void AnimateDog(bool moving)
     {
-        animator.SetBool("Moving", moving);
+        if (Time.timeScale != 0)
+        {
+            animator.SetBool("Moving", moving);
+        }
     }
 }
