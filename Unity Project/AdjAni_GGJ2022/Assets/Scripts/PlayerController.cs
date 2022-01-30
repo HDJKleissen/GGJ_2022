@@ -50,6 +50,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
+            body.velocity = Vector2.zero;
             OwnerAnimator.AnimatePlayer(Vector2.zero);
         }
     }

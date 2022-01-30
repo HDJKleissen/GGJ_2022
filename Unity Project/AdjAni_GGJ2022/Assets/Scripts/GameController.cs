@@ -7,7 +7,6 @@ using System;
 public class GameController : UnitySingleton<GameController>
 {
     public UIController UIController;
-    public MusicPlayer MusicPlayer;
     public DogController Dog;
     public PlayerController Owner;
     public CinemachineVirtualCamera VirtualCamera;
@@ -33,8 +32,8 @@ public class GameController : UnitySingleton<GameController>
     // Start is called before the first frame update
     void Start()    
     {
-        MusicPlayer.SetSpeedUp(true);
         //GreyScaleScene.Shade();
+        
     }
 
     // Update is called once per frame
@@ -126,7 +125,12 @@ public class GameController : UnitySingleton<GameController>
             scoreObject.BreakablesBroken = brokenBreakables.Count;
 
             GameStateSwitchOverlay.StartFade();
-            MusicPlayer.SetOwner(true);
+            MusicPlayer.Instance.SetOwner(true);
+            MusicPlayer.Instance.SetSpeedUp(false);
+        }
+        else if(killedChaseObjects.Count > chaseObjects.Count/2)
+        {
+            MusicPlayer.Instance.SetSpeedUp(true);
         }
     }
     public void CleanChaseObject(ChaseObject co)
@@ -157,7 +161,6 @@ public class GameController : UnitySingleton<GameController>
         {
             breakable.PrepForFixing();
         }
-
         GreyScaleScene.Shade();
     }
 
@@ -169,6 +172,9 @@ public class GameController : UnitySingleton<GameController>
         scoreObject.BreakablesFixed = fixedBreakables.Count;
         //UIController.OpenEndScreen(scoreObject);
         UIController.OpenHighScoreScene(scoreObject);
+        MusicPlayer.Instance.SetWin(true);
+        MusicPlayer.Instance.SetOwner(false);
+        MusicPlayer.Instance.SetSpeedUp(false);
     }
 }
 
