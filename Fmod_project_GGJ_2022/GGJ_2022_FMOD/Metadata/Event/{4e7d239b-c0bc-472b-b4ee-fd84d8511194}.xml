@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{4e7d239b-c0bc-472b-b4ee-fd84d8511194}">
 		<property name="name">
-			<value>Drop Bags</value>
+			<value>Drop_Bags</value>
 		</property>
 		<property name="outputFormat">
 			<value>0</value>
@@ -30,6 +30,9 @@
 		</relationship>
 		<relationship name="timeline">
 			<destination>{9b01ccb8-7fb9-4bb4-9593-2d5b1dce8b2c}</destination>
+		</relationship>
+		<relationship name="banks">
+			<destination>{44e6a9e9-6b93-4552-8239-406f3df128f9}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixer" id="{f8b382a6-93a9-4323-a2cf-2f4d1bcb9d5c}">
