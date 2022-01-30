@@ -12,11 +12,14 @@ public class DogAnimator : MonoBehaviour
         if (Time.timeScale != 0)
         {
             int verticalDir = (int)Mathf.Sign(verticalSpeed);
-            if(verticalSpeed != 0)
+            if(verticalSpeed == 0)
             {
-                SpriteRenderer.flipY = verticalSpeed < 0;
-                animator.SetInteger("VerticalSpeed", verticalDir);
+                verticalDir = -1;
+             
             }
+            SpriteRenderer.flipY = verticalDir == -1;
+            animator.SetInteger("VerticalSpeed", verticalDir);
+            
             animator.SetBool("Moving", moving);
         }
     }
