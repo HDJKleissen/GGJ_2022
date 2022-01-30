@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{bd58ce1a-f9d6-4cb9-ae9e-bc14becf654c}">
+		<property name="assetPath">
+			<value>Barks/Cut_Scene_Bark.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>1.53125</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{6de12829-caa8-406c-985b-4c50def66cc3}</destination>
+		</relationship>
+	</object>
+</objects>
