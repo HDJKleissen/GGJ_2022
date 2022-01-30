@@ -47,6 +47,10 @@ public class PlayerController : MonoBehaviour
                 {
                     chickenCleanIndicator.gameObject.SetActive(true);
                 }
+                else
+                {
+                    chickenCleanIndicator.gameObject.SetActive(false);
+                }
                 foreach(Collider2D collider in hits)
                 {
                     Debug.Log("Kicking " + collider.name);
