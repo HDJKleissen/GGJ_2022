@@ -29,6 +29,16 @@ public class MusicPlayer : MonoBehaviour
         Music.setParameterByName("Owner", value ? 1f : 0f, false);
     }
 
+    public void SetMenu(bool value)
+    {
+        Music.setParameterByName("Menu", value ? 1f : 0f, false);
+    }
+
+    public void SetWin(bool value)
+    {
+        Music.setParameterByName("Win", value ? 1f : 0f, false);
+    }
+
     private void OnDestroy()
     {
         Music.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
