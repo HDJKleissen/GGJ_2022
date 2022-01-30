@@ -7,8 +7,8 @@ using TMPro;
 
 public class UIController : MonoBehaviour
 {
-    public GameObject PauseMenu, GameOverMenuTemp, scoreScreenManager;
-    public TextMeshProUGUI catchableUIText, timerText, scoreSummaryText;
+    public GameObject PauseMenu, scoreScreenManager;
+    public TextMeshProUGUI catchableUIText, timerText;
     public ScoreCounter ScoreCounter;
 
     // Start is called before the first frame update

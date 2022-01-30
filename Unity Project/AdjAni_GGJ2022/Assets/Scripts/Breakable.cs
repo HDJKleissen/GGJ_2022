@@ -38,6 +38,7 @@ public abstract class Breakable : MonoBehaviour
         {
             if (HandleFix())
             {
+                FMODUnity.RuntimeManager.PlayOneShot("event:/Fixed_Ding");
                 GameController.Instance.ShakeCamera();
                 itemFixed = true;
                 GameController.Instance.FixBreakable(this);

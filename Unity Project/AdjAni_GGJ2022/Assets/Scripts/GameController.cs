@@ -24,7 +24,6 @@ public class GameController : UnitySingleton<GameController>
     List<Breakable> brokenBreakables = new List<Breakable>();
     List<Breakable> fixedBreakables = new List<Breakable>();
 
-    bool gameIsRunning;
     public ScoreObject scoreObject = new ScoreObject();
 
     public GameState GameState { get; private set; } = GameState.Dog;
@@ -120,6 +119,7 @@ public class GameController : UnitySingleton<GameController>
 
     public void KillChaseObject(ChaseObject co)
     {
+        MusicPlayer.Instance.SetSpeedUp(true);
         if (killedChaseObjects.Contains(co))
         {
             Debug.LogError("Trying to add an already chased object to the chased objects list, something went wrong!");
@@ -138,10 +138,6 @@ public class GameController : UnitySingleton<GameController>
             GameStateSwitchOverlay.StartFade();
             MusicPlayer.Instance.SetOwner(true);
             MusicPlayer.Instance.SetSpeedUp(false);
-        }
-        else if(killedChaseObjects.Count > chaseObjects.Count/2)
-        {
-            MusicPlayer.Instance.SetSpeedUp(true);
         }
     }
     public void CleanChaseObject(ChaseObject co)
@@ -163,6 +159,7 @@ public class GameController : UnitySingleton<GameController>
 
     public void SwitchToOwnerState()
     {
+        MusicPlayer.Instance.SetSpeedUp(true);
         GameState = GameState.Owner;
         VirtualCamera.Follow = Owner.transform;
         timer = OwnerTimeAmount;
