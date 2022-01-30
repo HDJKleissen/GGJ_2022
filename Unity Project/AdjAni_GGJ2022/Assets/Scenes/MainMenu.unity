@@ -1310,10 +1310,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e2a9c05614bc4e759d5ccb35efe4f9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialMenu: 1
-  initialSpeedup: 0
-  initialWin: 0
-  initialOwner: 0
+  Menu: 0
+  Speedup: 0
+  Win: 0
+  Owner: 0
 --- !u!4 &1391233624
 Transform:
   m_ObjectHideFlags: 0
