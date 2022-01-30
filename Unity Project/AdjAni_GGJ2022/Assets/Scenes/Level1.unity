@@ -4133,7 +4133,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.4797688, y: 1}
+    m_SensorSize: {x: 1.1385642, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -29503,10 +29503,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1614376086342105046, guid: 1742c308804db2b44816d967f5689fa9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1614376086342105047, guid: 1742c308804db2b44816d967f5689fa9, type: 3}
       propertyPath: m_Mass
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3030905963944389023, guid: 1742c308804db2b44816d967f5689fa9, type: 3}
+      propertyPath: goal
+      value: 
+      objectReference: {fileID: 201654916}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1742c308804db2b44816d967f5689fa9, type: 3}
 --- !u!1001 &1936759637

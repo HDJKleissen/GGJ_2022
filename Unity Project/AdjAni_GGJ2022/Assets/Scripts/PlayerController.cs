@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
     public float ChickenKickenRadius, ChickenKickForce;
     public CircleCollider2D feetCollider;
     public LayerMask ChickenLayer;
+    public ChickenCleanIndicator chickenCleanIndicator;
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
@@ -41,11 +42,28 @@ public class PlayerController : MonoBehaviour
             {
                 OwnerAnimator.Sweep();
                 Collider2D[] hits = Physics2D.OverlapCircleAll(feetCollider.bounds.center, ChickenKickenRadius, ChickenLayer);
+
+                if(hits.Length > 0)
+                {
+                    chickenCleanIndicator.gameObject.SetActive(true);
+                }
                 foreach(Collider2D collider in hits)
                 {
                     Debug.Log("Kicking " + collider.name);
                     collider.GetComponent<Rigidbody2D>().velocity = (feetCollider.bounds.center - collider.bounds.center).normalized * ChickenKickForce;
                 }
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    foreach (Collider2D collider in hits)
+                    {
+                        //FMODUnity.RuntimeManager.PlayOneShotAttached("event:/Chicken_Pok", gameObject);
+                        //todo play single sound effect
+                    }
+                }
+            }
+            if (Input.GetKeyUp(KeyCode.Space))
+            {
+                chickenCleanIndicator.gameObject.SetActive(false);
             }
         }
         else
