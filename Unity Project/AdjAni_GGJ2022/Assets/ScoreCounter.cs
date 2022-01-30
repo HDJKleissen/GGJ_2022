@@ -44,9 +44,9 @@ public class ScoreCounter : MonoBehaviour
     {
         Sequence scoreSequence = DOTween.Sequence();
 
-        int finalChickenScore = (int)Mathf.Clamp(MaxDogTime - scoreObject.DogTime, 0, MaxDogTime);
-        int finalCleanScore = (int)Mathf.Clamp(GameController.Instance.OwnerTimeAmount - scoreObject.OwnerTime, 0, GameController.Instance.OwnerTimeAmount);
-        int finalObjectsScore = -scoreObject.BreakablesBroken * 10;
+        int finalChickenScore = (int)Mathf.Clamp((MaxDogTime - scoreObject.DogTime)*100, 0, MaxDogTime * 100);
+        int finalCleanScore = (int)Mathf.Clamp((GameController.Instance.OwnerTimeAmount - scoreObject.OwnerTime) * 100, 0, GameController.Instance.OwnerTimeAmount * 100) ;
+        int finalObjectsScore = -scoreObject.BreakablesBroken * 1000;
         scoreObject.FinalScore = finalChickenScore + finalCleanScore + finalObjectsScore;
         //scoreSequence.AppendCallback(() => DingPlayer.Start());
         scoreSequence.Append(DOTween.To(() => chickenTime, time => chickenTime = time, scoreObject.DogTime, CountTime));
@@ -59,8 +59,8 @@ public class ScoreCounter : MonoBehaviour
         //scoreSequence.AppendCallback(() => DingPlayer.Stop());
         scoreSequence.AppendInterval(CountTime);
         //scoreSequence.AppendCallback(() => DingPlayer.Start());
-        scoreSequence.Append(DOTween.To(() => objectsBroken, time => objectsBroken = time, scoreObject.BreakablesBroken, CountTime));
-        scoreSequence.Append(DOTween.To(() => objectsScore, score => objectsScore = score, finalObjectsScore, CountTime));
+        scoreSequence.Append(DOTween.To(() => objectsBroken, time => objectsBroken = time, scoreObject.BreakablesBroken, scoreObject.BreakablesBroken > 0 ? CountTime : 0));
+        scoreSequence.Append(DOTween.To(() => objectsScore, score => objectsScore = score, finalObjectsScore, finalObjectsScore != 0 ? CountTime : 0));
         //scoreSequence.AppendCallback(() => DingPlayer.Stop());
         scoreSequence.AppendInterval(CountTime);
         //scoreSequence.AppendCallback(() => DingPlayer.Start());

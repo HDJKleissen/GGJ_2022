@@ -4256,7 +4256,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.3757225, y: 1}
+    m_SensorSize: {x: 1.3988439, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -14935,6 +14935,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1618759322}
+    - target: {fileID: 7544294459738298500, guid: 214e390840855284b80b3f00355b29e0, type: 3}
+      propertyPath: PounceWindupTime
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 7544294459738298617, guid: 214e390840855284b80b3f00355b29e0, type: 3}
       propertyPath: m_Name
       value: Dog
