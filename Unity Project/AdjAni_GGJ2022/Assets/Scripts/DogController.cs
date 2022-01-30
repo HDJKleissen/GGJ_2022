@@ -168,6 +168,7 @@ public class DogController : MonoBehaviour
         velocity = pounceDirection * PounceSpeed * Time.fixedDeltaTime;
         desiredVelocity = pounceDirection * PounceSpeed * Time.fixedDeltaTime;
         GameController.Instance.ShakeCamera();
+        FMODUnity.RuntimeManager.PlayOneShotAttached("event:/Bark", gameObject);
 
         yield return new WaitForSeconds(PounceJumpTime);
 

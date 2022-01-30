@@ -50,6 +50,7 @@ public class ScoreCounter : MonoBehaviour
         int finalObjectsScore = -scoreObject.BreakablesBroken * 5000;
 
         scoreObject.FinalScore = finalChickenScore + finalCleanScore + finalObjectsScore;
+        scoreSequence.AppendInterval(CountTime * 1.5f);
         scoreSequence.AppendCallback(() => DingPlayer.start());
         scoreSequence.Append(DOTween.To(() => chickenTime, time => chickenTime = time, scoreObject.DogTime, CountTime));
         scoreSequence.Append(DOTween.To(() => chickenScore, score => chickenScore = score, finalChickenScore, CountTime));
