@@ -18,7 +18,7 @@ public class DogController : MonoBehaviour
     public float pounceRechargeTimer;
     public float PounceRechargeTime;
     public Transform PounceCirclesParent;
-    public Image[] circles;
+    public Image[] circles = new Image[0];
 
     public Vector2 velocity = Vector2.zero;
     [ReadOnly]
@@ -32,8 +32,8 @@ public class DogController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        circles= PounceCirclesParent.GetComponentsInChildren<Image>();
-        MaxPounceCharges = circles.Length;
+        //circles= PounceCirclesParent.GetComponentsInChildren<Image>();
+        //MaxPounceCharges = circles.Length;
         PounceCharges = MaxPounceCharges;
         FMODUnity.RuntimeManager.PlayOneShotAttached("event:/Bark", gameObject);
     }

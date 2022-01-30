@@ -46,7 +46,7 @@ public class ScoreCounter : MonoBehaviour
         Sequence scoreSequence = DOTween.Sequence();
 
         int finalChickenScore = (int)Mathf.Clamp((MaxDogTime - scoreObject.DogTime)*1000, 0, MaxDogTime * 1000);
-        int finalCleanScore = (int)Mathf.Clamp((GameController.Instance.OwnerTimeAmount - scoreObject.OwnerTime) * 1000, 0, GameController.Instance.OwnerTimeAmount * 1000) ;
+        int finalCleanScore = (int)Mathf.Clamp((GameController.Instance.OwnerTimeAmount - scoreObject.OwnerTime) * 500, 0, GameController.Instance.OwnerTimeAmount * 1000) ;
         int finalObjectsScore = -scoreObject.BreakablesBroken * 5000;
 
         scoreObject.FinalScore = finalChickenScore + finalCleanScore + finalObjectsScore;
