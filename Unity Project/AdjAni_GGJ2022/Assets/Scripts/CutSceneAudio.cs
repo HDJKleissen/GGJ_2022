@@ -43,5 +43,10 @@ public class CutSceneAudio : MonoBehaviour
     {
         FMODUnity.RuntimeManager.PlayOneShot("event:/Single_Bok");
     }
+
+    public void PlayFoostep()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Owner_Step");
+    }
 }
 
