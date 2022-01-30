@@ -16,8 +16,9 @@ public class SetMenuChickenLocation : MonoBehaviour
         
     }
 
-    public void SetLocationY(float Y)
+    public void SetParent(Transform newParent)
     {
-        transform.position = new Vector3(transform.position.x, Y, transform.position.z);
+        transform.parent = newParent;
+        transform.localPosition = new Vector3(transform.localPosition.x, 0, transform.localPosition.z);
     }
 }

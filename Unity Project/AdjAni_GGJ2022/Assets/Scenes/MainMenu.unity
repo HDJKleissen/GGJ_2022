@@ -357,11 +357,11 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 475933632}
           m_TargetAssemblyTypeName: SetMenuChickenLocation, Assembly-CSharp
-          m_MethodName: SetLocationY
-          m_Mode: 4
+          m_MethodName: SetParent
+          m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_ObjectArgument: {fileID: 292939218}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 175
             m_StringArgument: 
@@ -400,6 +400,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 415070206}
+  - {fileID: 475933628}
   m_Father: {fileID: 1259241705}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -473,7 +474,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: MergedGameLoops
+          m_StringArgument: Level1
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &330397942
@@ -533,11 +534,11 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 475933632}
           m_TargetAssemblyTypeName: SetMenuChickenLocation, Assembly-CSharp
-          m_MethodName: SetLocationY
-          m_Mode: 4
+          m_MethodName: SetParent
+          m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_ObjectArgument: {fileID: 330397940}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 500
             m_StringArgument: 
@@ -575,7 +576,6 @@ RectTransform:
   m_Children:
   - {fileID: 941745741}
   - {fileID: 1557684418}
-  - {fileID: 475933628}
   m_Father: {fileID: 1195356030}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -796,17 +796,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 475933627}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 371379387}
-  m_RootOrder: 2
+  m_Father: {fileID: 330397940}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 111, y: -440}
+  m_AnchoredPosition: {x: -15, y: 0}
   m_SizeDelta: {x: 250, y: 250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &475933629
@@ -1033,11 +1033,11 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 475933632}
           m_TargetAssemblyTypeName: SetMenuChickenLocation, Assembly-CSharp
-          m_MethodName: SetLocationY
-          m_Mode: 4
+          m_MethodName: SetParent
+          m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_ObjectArgument: {fileID: 623972966}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 325
             m_StringArgument: 

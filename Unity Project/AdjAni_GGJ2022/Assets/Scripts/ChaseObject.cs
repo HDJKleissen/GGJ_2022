@@ -14,7 +14,7 @@ public class ChaseObject : MonoBehaviour
     public ChickenAnimator chickenAnimator;
     public Rigidbody2D rigbod2D;
     public Transform LeftWall, RightWall, TopWall, BottomWall;
-    public float TimeUntilNewPosition;
+    public float TimeUntilNewPosition, DogDetectionRange;
     Transform AIDestination;
     Vector3 previousPosition;
     FMOD.Studio.EventInstance ChickenSounds;
@@ -22,6 +22,7 @@ public class ChaseObject : MonoBehaviour
     float findPositionTimer = 0;
 
     bool alive = true;
+    public bool waitingOnSpot = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -43,13 +44,20 @@ public class ChaseObject : MonoBehaviour
         if (alive)
         {
             
-            if (findPositionTimer < TimeUntilNewPosition && !AIPath.reachedEndOfPath)
+            if (findPositionTimer < TimeUntilNewPosition && !AIPath.reachedEndOfPath && !waitingOnSpot)
             {
                 findPositionTimer += Time.deltaTime;
             }
             else
             {
                 findPositionTimer = 0;
+                waitingOnSpot = true;
+                StartCoroutine(CoroutineHelper.DelaySeconds(FindNewRandomDestination, Random.Range(0,10)));
+            }
+
+            if (waitingOnSpot && Vector3.Distance(transform.position, Dog.position) < DogDetectionRange)
+            {
+                StopAllCoroutines();
                 FindNewRandomDestination();
             }
         }
@@ -104,6 +112,8 @@ public class ChaseObject : MonoBehaviour
 
     void FindNewRandomDestination()
     {
+        findPositionTimer = 0;
+        waitingOnSpot = false;
         AIDestination.position = new Vector3(Random.Range(LeftWall.position.x, RightWall.position.x), Random.Range(BottomWall.position.y, TopWall.position.y), 0);
     }
 }
