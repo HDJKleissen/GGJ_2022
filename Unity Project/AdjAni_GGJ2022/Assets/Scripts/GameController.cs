@@ -166,6 +166,7 @@ public class GameController : UnitySingleton<GameController>
 
     public void EndGame()
     {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Win_Fanfare");
         PlayerHasControl = false;
         scoreObject.TotalBreakables = breakables.Count;
         scoreObject.OwnerTime = GameController.Instance.OwnerTimeAmount - timer;
