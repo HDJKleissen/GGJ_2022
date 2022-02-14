@@ -51,6 +51,9 @@ public class GameStateSwitchOverlay : MonoBehaviour
         {
             GameController.Instance.PlayerHasControl = true;
             GameController.Instance.NoBrokenBreakablesCheck();
+            BlackScreen.gameObject.SetActive(false);
+            GameStateSwitchImage.gameObject.SetActive(false);
+            GameStateSwitchBG.gameObject.SetActive(false);
         }, FadeInTime + StayTime + FadeOutTime));
     }
 }

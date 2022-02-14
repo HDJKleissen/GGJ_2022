@@ -22,9 +22,7 @@ public class HighScores : MonoBehaviour
     
     public void UploadScore(string username, int score)  //CALLED when Uploading new Score to WEBSITE
     {//STATIC to call from other scripts easily
-#if !UNITY_EDITOR
         instance.StartCoroutine(instance.DatabaseUpload(username,score)); //Calls Instance
-#endif
     }
 
     IEnumerator DatabaseUpload(string username, int score) //Called when sending new score to Website

@@ -11,6 +11,8 @@ public class UIController : MonoBehaviour
     public TextMeshProUGUI catchableUIText, timerText;
     public ScoreCounter ScoreCounter;
 
+    bool paused = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +26,7 @@ public class UIController : MonoBehaviour
         {
             if (Input.GetButtonDown("Pause"))
             {
-                SetPause(true);
+                SetPause(!paused);
             }
         }
     }
@@ -34,8 +36,9 @@ public class UIController : MonoBehaviour
         SceneManager.LoadScene(sceneName);
     }
 
-    public void SetPause(bool paused)
+    public void SetPause(bool newPaused)
     {
+        paused = newPaused;
         PauseMenu.SetActive(paused);
         if (paused)
         {

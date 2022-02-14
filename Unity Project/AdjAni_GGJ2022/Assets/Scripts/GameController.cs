@@ -26,7 +26,7 @@ public class GameController : UnitySingleton<GameController>
 
     public ScoreObject scoreObject = new ScoreObject();
 
-    public GameState GameState { get; private set; } = GameState.Dog;
+    public GameState GameState = GameState.Dog;
     public bool PlayerHasControl = true;
 
     bool screenShakeEnabled = true;
